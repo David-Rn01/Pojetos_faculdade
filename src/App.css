@@ -1,0 +1,131 @@
+html {
+    font-family: Arial, sans-serif; 
+    color: #FFA500;
+    background-color: #000000;
+    background-image: linear-gradient(to bottom, #ffffff, #999999);
+    min-height: 100vh; 
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 180px;
+    padding: 40px;
+}
+
+.coluna-esquerda,
+.coluna-direita {
+    text-align: center;
+    width: 350px;
+}
+
+.coluna-esquerda h2 {
+    color: #f39c12;
+    font-size: 24px;
+}
+
+.coluna-esquerda p,
+.coluna-direita p {
+    color: #f39c12;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.coluna-direita h3 {
+    color: #f39c12;;
+    font-size: 22px;
+}
+
+.campo-input {
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    background-color: #ffffff;
+    color: #333333;
+    border: none;
+    border-radius: 10px;
+    box-sizing: border-box; 
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background-color: #f39c12;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button[type="submit"]:hover {
+    background-color: #e68e00;
+}
+
+.lembrar-dados {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #5a5050;
+    margin-top: 15px;
+}
+
+.lembrar-dados input[type="checkbox"] {
+    margin-right: 8px; 
+}
+
+.campo-input label {
+    display: none;
+}
+
+.logo-container {
+    padding-top: 40px;  
+    padding-bottom: 20px; 
+}
+
+#flashtech-logo { 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 250px;
+}
+
+.logo-container {
+    padding-top: 40px;  
+    padding-bottom: 20px; 
+}
+
+.icone {
+    font-size: 50px;
+    color: #000000;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+.esqueci-senha {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.esqueci-senha a {
+    color: #5f5555;
+    text-decoration: none;
+}
+
+.esqueci-senha a:hover {
+    text-decoration: underline;
+}
