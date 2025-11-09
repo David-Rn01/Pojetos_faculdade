@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css'; 
+import './LoginPage.css';
 
 function App() {
   return (
@@ -40,6 +40,7 @@ function App() {
             </div>
             
           </form>
+
         </div>
 
         <div className="coluna-direita">
