@@ -4,7 +4,7 @@ html {
     color: #333333;
 
     /* ESTA É A LINHA QUE CORRIGE O PROBLEMA */
-    min-height: 100vh; 
+    min-height: 95vh; 
 }
 
 body {
