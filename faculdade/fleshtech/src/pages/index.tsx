@@ -7,16 +7,23 @@ export default function Home() {
   return (
     <main>
       <div>
-        <h1>Avalanches Caruaru</h1>
-        <p>Welcome !</p>
+        <Image
+          src="/images/logo.png" // Verifique se o nome do arquivo está correto
+          alt="Logo Avalanches Caruaru"
+          width={200}  // Você pode ajustar o tamanho
+          height={150} // Você pode ajustar o tamanho
+          className="logo"
+        />
+        <h1>Faça seu pedido!</h1>
+        <p>hambúrguer</p>
         
         {/* Este é o container do grid */}
         <div className="produtos-grid"> 
           
-          {/* Este é o loop .map() */}
+          {/* Este é o loop .map() que cria um card para cada produto */}
           {produtos.map(produto => (
             
-            // Este é o card do produto
+            // Este é o card do produto (centralizado com flex)
             <div key={produto.id} className="produto-card"> 
               <Image 
                 src={produto.imagem} 
@@ -25,7 +32,9 @@ export default function Home() {
                 height={150}
               />
               <h2>{produto.nome}</h2>
-              <p>R$ {produto.preco.toFixed(2)}</p>
+              <p className="preco"> 
+                R$ {produto.preco.toFixed(2)}
+              </p>
             </div>
           ))}
         </div>
