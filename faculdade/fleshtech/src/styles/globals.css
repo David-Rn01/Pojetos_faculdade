@@ -2,3 +2,21 @@
 
 :root {
 }
+
+h1 {
+  text-align: center;
+}
+
+/* Adicione esta classe para os cards */
+.produto-card {
+  border: 1px solid #ddd; /* Adiciona uma borda cinza clara */
+  padding: 16px;          /* Adiciona um espaço interno (preenchimento) */
+  margin: 12px;           /* Adiciona um espaço externo (margem) */
+  border-radius: 8px;     /* Arredonda os cantos */
+}
+/* Adicione esta nova classe */
+.produtos-grid {
+  display: grid; /* Ativa o layout de grade */
+  grid-template-columns: 1fr 1fr; /* Cria duas colunas de tamanho igual */
+  gap: 16px; /* Adiciona um espaço entre os cards */
+}
