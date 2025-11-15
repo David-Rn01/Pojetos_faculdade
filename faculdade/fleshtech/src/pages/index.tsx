@@ -1,0 +1,53 @@
+import { useRouter } from 'next/router';
+
+export default function HomePage() {
+  const router = useRouter(); // Hook para navegação
+
+  return (
+    // Fundo gradiente
+    <div className="bg-gradient-to-b from-slate-900 to-slate-700 min-h-[calc(100vh-128px)] flex items-center justify-center p-4">
+
+      {/* Card Principal */}
+      <div className="bg-white w-full max-w-md p-8 md:p-12 rounded-2xl shadow-xl text-center">
+        
+        <h1 className="text-4xl md:text-5xl font-bold text-[#301860]">
+          Flashtech
+        </h1>
+        
+        <p className="text-lg text-gray-600 mt-3">
+          Sua loja de eletrônicos.
+        </p>
+
+        {/* Container dos Botões */}
+        <div className="mt-10 space-y-4">
+          <button 
+            onClick={() => router.push('/login')}
+            className="block w-full text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out
+                       bg-[#483078] hover:bg-[#301860] focus:outline-none focus:ring-2 focus:ring-[#483078] focus:ring-opacity-50"
+          >
+            Entrar
+          </button>
+          
+          <button 
+            onClick={() => router.push('/signup')}
+            className="block w-full text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out
+                       bg-[#301860] hover:bg-[#483078] focus:outline-none focus:ring-2 focus:ring-[#301860] focus:ring-opacity-50"
+          >
+            Criar Conta
+          </button>
+        </div>
+
+        {/* Link Secundário */}
+        <div className="mt-8">
+          <button 
+            onClick={() => router.push('/store')}
+            className="text-sm text-gray-500 hover:text-[#483078] hover:underline transition-colors"
+          >
+            Ver produtos como visitante
+          </button>
+        </div>
+        
+      </div>
+    </div>
+  );
+}
