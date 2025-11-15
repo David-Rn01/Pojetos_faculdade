@@ -1,51 +1,98 @@
-import ProductCard from "@/components/ProductCard";
-import { Product } from "@/types";
+import Head from 'next/head';
+import Link from 'next/link';
+import { Smartphone, Laptop, Headphones, Package } from 'lucide-react';
+import ProductCard from '@/components/ProductCard'; 
 
-// --- Dados dos Produtos ---
-// Colocamos os dados aqui por enquanto
-const products: Product[] = [ // Usamos a interface Product[]
-  {
-    id: 1,
-    name: 'Notebook Ultra X1',
-    price: 'R$ 4.599,90',
-    description: 'Performance de ponta para trabalho e jogos. Intel i7, 16GB RAM, 512GB SSD.',
-    imageUrl: 'https://placehold.co/600x400/301860/white?text=Notebook+Ultra+X1'
-  },
-  {
-    id: 2,
-    name: 'Smartphone Flash F2',
-    price: 'R$ 2.999,00',
-    description: 'Câmera tripla de 108MP e tela AMOLED de 120Hz.',
-    imageUrl: 'https://placehold.co/600x400/483078/white?text=Smartphone+Flash+F2'
-  },
-  {
-    id: 3,
-    name: 'Fone de Ouvido NoiseFree',
-    price: 'R$ 899,90',
-    description: 'Cancelamento de ruído ativo e 30 horas de bateria.',
-    imageUrl: 'https://placehold.co/600x400/301860/white?text=Fone+NoiseFree'
-  },
-  {
-    id: 4,
-    name: 'Smartwatch TechFit',
-    price: 'R$ 1.250,00',
-    description: 'Monitoramento completo de saúde e GPS integrado.',
-    imageUrl: 'https://placehold.co/600x400/483078/white?text=Smartwatch+TechFit'
-  },
+// --- DADOS FICTÍCIOS (MOCK) ---
+const mockProducts = [
+  { id: 1, name: 'Smartphone Pro X (128GB, Tela 6.7")', price: 4299.90, imageUrl: 'https://placehold.co/600x600/301860/FFFFFF?text=Smartphone' },
+  { id: 2, name: 'Notebook UltraSlim', price: 7599.00, imageUrl: 'https://placehold.co/600x600/483078/FFFFFF?text=Notebook' },
+  { id: 3, name: 'Fone de Ouvido Sem Fio Flashtech Bass', price: 899.90, imageUrl: 'https://placehold.co/600x600/301860/FFFFFF?text=Fone' },
+  { id: 4, name: 'Smartwatch 2.0 GPS', price: 1899.50, imageUrl: 'https://placehold.co/600x600/483078/FFFFFF?text=Watch' },
+  { id: 5, name: 'Carregador Rápido 65W', price: 299.00, imageUrl: 'https://placehold.co/600x600/301860/FFFFFF?text=Carregador' },
+  { id: 6, name: 'Mouse Gamer Pro', price: 499.00, imageUrl: 'https://placehold.co/600x600/483078/FFFFFF?text=Mouse' },
 ];
+// ------------------------------
 
-export default function StoreHomePage() {
+export default function StorePage() {
   return (
-    <div className="container mx-auto px-4 py-8 min-h-[calc(100vh-128px)]">
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
-        <h1 className="text-4xl font-bold text-gray-900">Nossos Produtos</h1>
-      </div>
+    <>
+      <Head>
+        <title>Flashtech - Nossa Loja</title>
+      </Head>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {products.map(product => (
-          <ProductCard key={product.id} product={product} />
-        ))}
+      {/* Este 'w-full' faz ele ocupar 100% do "container" do _app.tsx */}
+      <div className="w-full space-y-16">
+
+        {/* --- Seção Hero --- */}
+        <section className="text-center bg-gray-50 dark:bg-gray-800 p-12 md:p-20 rounded-xl shadow-sm">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#301860] dark:text-gray-100">
+            Bem-vindo à Flashtech
+          </h1>
+          <p className="text-lg text-gray-600 dark:text-gray-300 mt-4 max-w-2xl mx-auto">
+            Os melhores eletrônicos e gadgets de última geração.
+          </p>
+          <div className="mt-8">
+            <Link
+              href="#destaques"
+              className="inline-block text-white font-bold py-3 px-8 rounded-lg transition-colors
+                         bg-[] hover:bg-[#301860]
+                         focus:outline-none focus:ring-2 focus:ring-[#483078] focus:ring-opacity-50"
+            >
+              Ver Ofertas
+            </Link>
+          </div>
+        </section>
+
+        {/* --- Seção de Categorias --- */}
+        <section>
+          <h2 className="text-3xl font-bold text-center text-gray-800 dark:text-gray-100 mb-8">
+            Nossas Categorias
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            <CategoryLink icon={<Smartphone size={32} />} name="Smartphones" />
+            <CategoryLink icon={<Laptop size={32} />} name="Notebooks" />
+            <CategoryLink icon={<Headphones size={32} />} name="Acessórios" />
+            <CategoryLink icon={<Package size={32} />} name="Outros" />
+          </div>
+        </section>
+
+        {/* --- Seção de Produtos em Destaque --- */}
+        <section id="destaques">
+          <h2 className="text-3xl font-bold text-center text-gray-800 dark:text-gray-100 mb-8">
+            Em Destaque
+          </h2>
+          
+          {/* A grade pequena com 6 colunas */}
+          <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-5 bg-red-500">
+            {mockProducts.map((product) => (
+              <ProductCard
+                key={product.id}
+                name={product.name}
+                price={product.price}
+                imageUrl={product.imageUrl}
+              />
+            ))}
+          </div>
+        </section>
+
       </div>
-    </div>
+    </>
   );
 }
+
+// Componente auxiliar de categoria
+const CategoryLink = ({ icon, name }: { icon: React.ReactNode, name: string }) => (
+  <Link
+    href="#"
+    className="flex flex-col items-center justify-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md
+               text-gray-700 dark:text-gray-200 hover:text-[#483078] dark:hover:text-white
+               border border-transparent hover:border-[#483078] 
+               transition-all group"
+  >
+    <div className="text-gray-500 group-hover:text-[#483078] transition-colors">
+      {icon}
+    </div>
+    <span className="mt-3 font-semibold text-center">{name}</span>
+  </Link>
+);

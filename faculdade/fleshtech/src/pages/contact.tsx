@@ -8,7 +8,7 @@ export default function ContactPage() {
       
       <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
         <form>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div className="grid grid-cols-5 md:grid-cols-5 gap-2 mb-2">
             <div>
               <label htmlFor="firstName" className="block text-sm font-bold text-gray-700 mb-2">Nome</label>
               <input type="text" id="firstName" className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#483078]" />
@@ -24,11 +24,11 @@ export default function ContactPage() {
           </div>
           <div className="mb-6">
             <label htmlFor="message" className="block text-sm font-bold text-gray-700 mb-2">Sua Mensagem</label>
-            <textarea id="message" rows={5} className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#483078]"></textarea>
+            <textarea id="message" rows={5} className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[]"></textarea>
           </div>
           <button 
             type="submit"
-            className="w-full p-3 rounded-lg text-white font-bold text-lg bg-gradient-to-r from-[#301860] to-[#483078] hover:opacity-90 transition-opacity duration-200"
+            className="w-full p-3 rounded-lg text-white font-bold text-lg bg-gradient-to-r from-[] to-[] hover:opacity-90 transition-opacity duration-200"
           >
             Enviar Mensagem
           </button>
