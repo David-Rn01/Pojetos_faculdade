@@ -8,13 +8,13 @@ export default function HomePage() {
     <div style={{backgroundColor: `liner-gradient(to bottom, #f3f4f6, #e5e7eb)`}}>
 
       {/* Card Principal */}
-      <div className="bg-white/95 backdrop-blur-sm p-20 rounded-2xl shadow-lg w-150 text-center pt-10">
+      <div className="bg-gray-800 backdrop-blur-sm p-20 rounded-2xl shadow-lg w-150 text-center pt-10">
         
-        <h1 className="text-4xl md:text-5xl font-bold text-[#301860]">
+        <h1 className="text-4xl md:text-5xl font-bold text-amber-50">
           Flashtech
         </h1>
         
-        <p className="text-lg text-gray-600 mt-3">
+        <p className="text-lg text-amber-50 mt-3">
           Sua loja de eletrônicos.
         </p>
 
@@ -41,7 +41,7 @@ export default function HomePage() {
         <div className="mt-8">
           <button 
             onClick={() => router.push('/store')}
-            className="text-sm text-gray-500 hover:text-[#483078] hover:underline transition-colors"
+            className="text-sm text-blue-200 hover:text-blue-500 hover:underline transition-colors"
           >
             Ver produtos como visitante
           </button>
