@@ -1,20 +1,16 @@
 import { Html, Head, Main, NextScript } from 'next/document';
-import Document from 'next/document';
 
-class MyDocument extends Document {
-  render() {
-    return (
-      <Html lang="pt-br">
-        <Head>
-          {/* Fontes e metatags podem ser pré-carregados aqui */}
-        </Head>
-        <body>
-          <Main />
-          <NextScript />
-        </body>
-      </Html>
-    );
-  }
+export default function Document() {
+  return (
+    <Html lang="pt-BR">
+      <Head />
+      {/* O <body> é controlado pelo _app.tsx
+        As fontes são carregadas pelo next/font no _app.tsx
+      */}
+      <body>
+        <Main />
+        <NextScript />
+      </body>
+    </Html>
+  );
 }
-
-export default MyDocument;

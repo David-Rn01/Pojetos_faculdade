@@ -1,29 +1,68 @@
-import { Product } from '@/types'; // Importa nossa interface
+import Link from 'next/link';
 
-interface ProductCardProps {
-  product: Product;
-}
+// Define as propriedades (props) que o card espera receber
+type ProductCardProps = {
+  name: string;
+  price: number;
+  imageUrl: string;
+};
 
-export default function ProductCard({ product }: ProductCardProps) {
+// Formata o preço para o padrão BRL (R$ 1.234,56)
+const formatPrice = (price: number) => {
+  return new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+  }).format(price);
+};
+
+export default function ProductCard({ name, price, imageUrl }: ProductCardProps) {
   return (
-    <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-      <img
-        src={product.imageUrl}
-        alt={product.name}
-        className="w-full h-48 object-cover"
-        onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-          e.currentTarget.onerror = null; 
-          e.currentTarget.src = 'https://placehold.co/600x400/cccccc/333333?text=Imagem+Indisponível';
-        }}
-      />
-      <div className="p-6">
-        <h3 className="text-2xl font-bold text-gray-800 mb-2">{product.name}</h3>
-        <p className="text-gray-600 text-base mb-4">{product.description}</p>
-        <div className="text-3xl font-bold text-[#301860] mb-4">{product.price}</div>
-        <button className="w-full bg-[#301860] hover:bg-[#483078] text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200">
-          Adicionar ao Carrinho
+    <Link 
+      href="#"
+      className="flex flex-col bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden
+                 border border-gray-200 dark:border-gray-700
+                 transition-all duration-300
+                 hover:shadow-xl hover:scale-[1.03]"
+    >
+      {/* Imagem do Produto (Menor) */}
+      <div className="relative w-full h-28"> 
+        <img
+          src={imageUrl}
+          alt={name}
+          className="w-full h-full object-cover"
+          onError={(e) => (e.currentTarget.src = 'https://placehold.co/600x600/CCCCCC/FFFFFF?text=Erro')}
+        />
+      </div>
+
+      {/* Conteúdo do Card (Padding menor) */}
+      <div className="p-4 flex flex-col flex-grow">
+        
+        {/* Nome do Produto (Fonte menor e altura fixa menor) */}
+        <h3 className="text-base font-bold text-gray-800 dark:text-gray-100 h-12" title={name}>
+          {name}
+        </h3>
+        
+        {/* Preço (Fonte menor) */}
+        <p className="text-xl font-semibold text-[#483078] my-2">
+          {formatPrice(price)}
+        </p>
+
+        {/* Botão de Adicionar ao Carrinho (Fonte menor) */}
+        <button
+          className="w-full mt-auto text-white font-bold py-1.5 px-3 rounded-lg 
+                     text-sm
+                     transition-colors duration-300
+                     bg-[#301860] hover:bg-[#483078]
+                     focus:outline-none focus:ring-2 focus:ring-[#301860] focus:ring-opacity-50"
+          
+          onClick={(e) => {
+            e.preventDefault(); 
+            console.log(`Adicionado ao carrinho: ${name}`);
+          }}
+        >
+          Adicionar
         </button>
       </div>
-    </div>
+    </Link>
   );
 }
