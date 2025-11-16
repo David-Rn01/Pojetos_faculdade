@@ -13,8 +13,8 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="bg-gradient-to-b from-gray-900 to-gray-800 min-h-[calc(100vh-128px)] flex items-center justify-center p-4">
-      <div className="bg-gray-800 p-8 md:p-10 rounded-2xl shadow-2xl w-full max-w-md">
+    <div style={{backgroundColor: `liner-gradient(to bottom, #f3f4f6, #e5e7eb)`}}>
+      <div className="bg-gray-800 p-8 md:p-20 rounded-2xl shadow-2xl w-150">
         
         <div className="text-center mb-8">
           <svg className="w-12 h-12 mx-auto text-[#483078]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
