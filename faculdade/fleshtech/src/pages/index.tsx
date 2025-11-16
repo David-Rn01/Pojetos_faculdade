@@ -1,53 +1,47 @@
+"use client";
 import { useRouter } from 'next/router';
 
-export default function HomePage() {
-  const router = useRouter(); // Hook para navegação
+export default function TestPage() {
+  const router = useRouter();
+    return (
+    <div
+      style={{
+        minHeight: '100vh',
+        background: 'linear-gradient(to bottom, #10182B 0%, #212C3E 50%, #303F52 100%)',
+        margin: 0,
+        backgroundAttachment: 'fixed',
+        padding: '20px'
+      }}
+    >
 
-  return (
-    // Fundo gradiente
-    <div className="bg-gradient-to-b from-slate-900 to-slate-700 min-h-[calc(100vh-128px)] flex items-center justify-center p-4">
-
-      {/* Card Principal */}
-      <div className="bg-white w-full max-w-md p-8 md:p-12 rounded-2xl shadow-xl text-center">
-        
-        <h1 className="text-4xl md:text-5xl font-bold text-[#301860]">
+      <div className="min-h-screen flex justify-center items-center">
+      {/* 
+        Outras opacidades:
+        bg-blue-500/25 - 25% de opacidade
+        bg-blue-500/75 - 75% de opacidade
+        bg-blue-500/90 - 90% de opacidade
+      */}
+      
+      <div className="bg-white/95 backdrop-blur-sm p-20 rounded-2xl shadow-lg w-150 text-center pt-10">
+        <h1 className="text-6xl font-bold text-gray-800">
           Flashtech
         </h1>
-        
-        <p className="text-lg text-gray-600 mt-3">
-          Sua loja de eletrônicos.
-        </p>
 
-        {/* Container dos Botões */}
-        <div className="mt-10 space-y-4">
-          <button 
-            onClick={() => router.push('/login')}
-            className="block w-full text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out
-                       bg-[#483078] hover:bg-[#301860] focus:outline-none focus:ring-2 focus:ring-[#483078] focus:ring-opacity-50"
-          >
-            Entrar
-          </button>
-          
-          <button 
-            onClick={() => router.push('/signup')}
-            className="block w-full text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out
-                       bg-[#301860] hover:bg-[#483078] focus:outline-none focus:ring-2 focus:ring-[#301860] focus:ring-opacity-50"
-          >
-            Criar Conta
-          </button>
-        </div>
+        <p style={{marginTop: 15, marginBottom: 30}} >Sua loja de eletrônicos</p>
+        <button onClick={() => router.push('/login')}
+        className="mb-10 w-full bg-[#473078] hover:bg-[#634E8F] text-white font-semibold py-3 px-4 rounded-lg transition duration-200 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+          Enter
+        </button>
 
-        {/* Link Secundário */}
-        <div className="mt-8">
-          <button 
-            onClick={() => router.push('/store')}
-            className="text-sm text-gray-500 hover:text-[#483078] hover:underline transition-colors"
-          >
-            Ver produtos como visitante
-          </button>
-        </div>
-        
+        <button onClick={() => router.push('/signup')}
+        className="mb-10 w-full bg-[#2F1860] hover:bg-[#432979] text-white font-semibold py-3 px-4 rounded-lg transition duration-200 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
+          Criar Conta
+        </button>
+        <a href="store" className="text-gray-600">
+          Fundo com opacidade e blur
+        </a>
       </div>
+    </div>
     </div>
   );
 }
