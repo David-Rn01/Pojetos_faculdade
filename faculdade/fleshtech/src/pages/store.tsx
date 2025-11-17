@@ -11,6 +11,12 @@ const mockProducts = [
   { id: 4, name: 'Smartwatch 2.0 GPS', price: 1899.50, imageUrl: 'https://placehold.co/600x600/483078/FFFFFF?text=Watch' },
   { id: 5, name: 'Carregador Rápido 65W', price: 299.00, imageUrl: 'https://placehold.co/600x600/301860/FFFFFF?text=Carregador' },
   { id: 6, name: 'Mouse Gamer Pro', price: 499.00, imageUrl: 'https://placehold.co/600x600/483078/FFFFFF?text=Mouse' },
+  { id: 6, name: 'Mouse Gamer Pro', price: 499.00, imageUrl: 'https://placehold.co/600x600/483078/FFFFFF?text=Mouse' },
+  { id: 6, name: 'Mouse Gamer Pro', price: 499.00, imageUrl: 'https://placehold.co/600x600/483078/FFFFFF?text=Mouse' },
+  { id: 6, name: 'Mouse Gamer Pro', price: 499.00, imageUrl: 'https://placehold.co/600x600/483078/FFFFFF?text=Mouse' },
+  { id: 6, name: 'Mouse Gamer Pro', price: 499.00, imageUrl: 'https://placehold.co/600x600/483078/FFFFFF?text=Mouse' },
+  { id: 6, name: 'Mouse Gamer Pro', price: 499.00, imageUrl: 'https://placehold.co/600x600/483078/FFFFFF?text=Mouse' },
+  { id: 6, name: 'Mouse Gamer Pro', price: 499.00, imageUrl: 'https://placehold.co/600x600/483078/FFFFFF?text=Mouse' },
 ];
 // ------------------------------
 
@@ -59,12 +65,12 @@ export default function StorePage() {
 
         {/* --- Seção de Produtos em Destaque --- */}
         <section id="destaques">
-          <h2 className="text-3xl font-bold text-center text-gray-800 dark:text-gray-100 mb-8">
-            Em Destaque
+          <h2 className="text-2xl font-bold text-center text-gray-800 dark:text-gray-100 mb-10">
+            Em Destaque 
           </h2>
           
           {/* A grade pequena com 6 colunas */}
-          <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-5 bg-red-500">
+          <div className="grid grid-cols-5 sm:grid-cols-5 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-2 gap-10 ">
             {mockProducts.map((product) => (
               <ProductCard
                 key={product.id}
@@ -85,7 +91,7 @@ export default function StorePage() {
 const CategoryLink = ({ icon, name }: { icon: React.ReactNode, name: string }) => (
   <Link
     href="#"
-    className="flex flex-col items-center justify-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md
+    className="flex flex-col items-center justify-center p-2 bg-white dark:bg-gray-800 rounded-lg shadow-md
                text-gray-700 dark:text-gray-200 hover:text-[#483078] dark:hover:text-white
                border border-transparent hover:border-[#483078] 
                transition-all group"

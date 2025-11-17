@@ -6,9 +6,9 @@ export default function ContactPage() {
         Tem alguma dúvida, sugestão ou precisa de suporte? Nossa equipe está pronta para ajudar!
       </p>
       
-      <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+      <div className="bg-white p-5 rounded-xl shadow-lg border border-gray-200">
         <form>
-          <div className="grid grid-cols-5 md:grid-cols-5 gap-2 mb-2">
+          <div className="grid grid-cols-5 md:grid-cols-5 gap-1 mb-5">
             <div>
               <label htmlFor="firstName" className="block text-sm font-bold text-gray-700 mb-2">Nome</label>
               <input type="text" id="firstName" className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#483078]" />

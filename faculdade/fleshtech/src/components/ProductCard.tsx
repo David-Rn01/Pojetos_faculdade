@@ -25,7 +25,7 @@ export default function ProductCard({ name, price, imageUrl }: ProductCardProps)
                  hover:shadow-xl hover:scale-[1.03]"
     >
       {/* Imagem do Produto (Menor) */}
-      <div className="relative w-full h-28"> 
+      <div className="relative w-full h-48"> 
         <img
           src={imageUrl}
           alt={name}
@@ -43,7 +43,7 @@ export default function ProductCard({ name, price, imageUrl }: ProductCardProps)
         </h3>
         
         {/* Preço (Fonte menor) */}
-        <p className="text-xl font-semibold text-[#483078] my-2">
+        <p className="text-xl font-semibold text-[#ffffff] my-8">
           {formatPrice(price)}
         </p>
 
