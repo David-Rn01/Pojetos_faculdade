@@ -21,7 +21,7 @@ export default function StorePage() {
   return (
     <>
       <Head>
-        <title>Flashtech - Nossa Loja</title>
+        <title>Flashtech - Loja</title>
       </Head>
 
       {/* O w-full faz ele ocupar 100% do 'main' no _app.tsx */}
