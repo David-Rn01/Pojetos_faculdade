@@ -1,42 +1,60 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { Lock, Mail } from 'lucide-react'; // Ícones (opcional, mas fica bom)
+import { useRouter } from 'next/router';
+import { useState } from 'react';
 
 export default function LoginPage() {
+  const router = useRouter();
+  
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault(); // Impede a página de recarregar
+    setError('');
+    
+    console.log("Tentando logar com:", email, password); // Para você ver no Console (F12)
+
+    // --- LÓGICA DE TESTE ---
+    // Se quiser aceitar QUALQUER login para testar, apague o IF e deixe só o router.push
+    if (email === 'admin.com' && password === '123456') {
+      console.log('Login aprovado! Redirecionando...');
+      router.push('/store'); 
+    } else {
+      console.log('Login negado.');
+      setError('E-mail ou senha incorretos. (Tente: admin.com / 123456)');
+    }
+  };
+
   return (
     <>
       <Head>
         <title>Login - Flashtech</title>
       </Head>
 
-      {/* 1. ADICIONE ESTE DIV "wrapper" PARA CENTRALIZAR */}
-      <div className="h-full flex items-center justify-center mt-30 mb-30">
-
-        {/* 2. ESTA É A SUA CAIXA ROXA (baseada na imagem) */}
+      <div className="h-full flex items-center justify-center py-12">
         <div className="bg-gray-800 rounded-lg shadow-xl p-8 max-w-md w-full">
           
           <div className="text-center mb-8">
-            <svg className="mx-auto h-12 w-12 text-[#483078]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
-            <h1 className="text-3xl font-bold text-white mt-2">
-              Flashtech
-            </h1>
-            <p className="text-gray-300">
-              Entre na sua conta
-            </p>
+            <h1 className="text-3xl font-bold text-white mt-2">Flashtech</h1>
+            <p className="text-gray-300">Entre na sua conta</p>
           </div>
 
-          <form className="space-y-6">
+          {/* O onSubmit DEVE estar aqui na tag form */}
+          <form className="space-y-6" onSubmit={handleSubmit}>
             <div>
               <label className="block text-sm font-medium text-gray-300 mb-1" htmlFor="email">
-                E-mail
+                E-mail ou Usuário
               </label>
               <input 
-                type="email" 
+                type="text" 
                 id="email"
-                placeholder="voce@exemplo.com"
+                placeholder="admin.com"
                 className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-[#483078]"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
               />
             </div>
 
@@ -47,17 +65,21 @@ export default function LoginPage() {
               <input 
                 type="password" 
                 id="password"
-                placeholder="••••••••"
+                placeholder="123456"
                 className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-[#483078]"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
               />
             </div>
             
-            <div className="text-right">
-              <a href="#" className="text-sm text-blue-400 hover:underline">
-                Esqueceu a senha?
-              </a>
-            </div>
+            {error && (
+              <p className="text-center text-red-400 text-sm bg-red-900/20 p-2 rounded">
+                {error}
+              </p>
+            )}
 
+            {/* O botão deve ser type="submit" */}
             <button 
               type="submit"
               className="block w-full text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out
@@ -77,8 +99,7 @@ export default function LoginPage() {
           </p>
 
         </div>
-
-      </div> {/* 3. FECHE O DIV "wrapper" */}
+      </div>
     </>
   );
 }
