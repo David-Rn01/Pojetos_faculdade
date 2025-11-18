@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useCart } from '../components/CartContext'; // Importa nosso hook
 import Link from 'next/link';
-import Head from 'next/head'; // Importar o Head
+import Head from 'next/head'; 
 
 // Função para formatar o preço
 const formatCurrency = (value: number) => {
@@ -11,16 +11,17 @@ const formatCurrency = (value: number) => {
     }).format(value);
 };
 
-// ESTA É A LINHA IMPORTANTE
 export default function CheckoutPage() {
     
-    const { cartItems, totalPrice } = useCart(); // Pega os itens e o total do contexto
+    // Pega os itens e o total do contexto (Erro do '_' corrigido aqui)
+    const { cartItems, totalPrice } = useCart(); 
     
     const [activeTab, setActiveTab] = useState('cartao'); // Estado para as abas
     const [showModal, setShowModal] = useState(false); // Estado para o modal de sucesso
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
+        // Aqui entraria a lógica real de pagamento
         setShowModal(true);
     };
 
@@ -32,7 +33,8 @@ export default function CheckoutPage() {
 
             <main className="w-full">
                 <div className="lg:grid lg:grid-cols-3 lg:gap-12">
-                    {/* Coluna da Esquerda: Formulários */}
+                    
+                    {/* --- COLUNA DA ESQUERDA: FORMULÁRIOS --- */}
                     <form onSubmit={handleSubmit} className="lg:col-span-2 space-y-8">
 
                         {/* 1. Informações Pessoais */}
@@ -119,7 +121,6 @@ export default function CheckoutPage() {
                         <section>
                             <h2 className="text-2xl font-semibold text-white mb-6">Pagamento</h2>
                             <div className="flex">
-                                {/* Aqui ainda usamos as classes do globals.css, pois elas são para o 'container' das abas */}
                                 <button type="button" onClick={() => setActiveTab('cartao')} className={`tab-btn ${activeTab === 'cartao' ? 'active' : ''}`}>Cartão</button>
                                 <button type="button" onClick={() => setActiveTab('pix')} className={`tab-btn ${activeTab === 'pix' ? 'active' : ''}`}>PIX</button>
                                 <button type="button" onClick={() => setActiveTab('boleto')} className={`tab-btn ${activeTab === 'boleto' ? 'active' : ''}`}>Boleto</button>
@@ -158,11 +159,23 @@ export default function CheckoutPage() {
                             </div>
                             {/* Conteúdo Aba PIX */}
                             <div id="content-pix" className={`tab-content ${activeTab === 'pix' ? 'block' : ''}`}>
-                                {/* ... (Conteúdo do PIX) ... */}
+                                <div className="text-center">
+                                    <p className="text-lg text-gray-300 mb-4">Clique no botão abaixo para gerar um código PIX.</p>
+                                    <p className="text-sm text-gray-400 mb-6">O código QR e o "Copia e Cola" serão exibidos após a confirmação do pedido.</p>
+                                    <button type="button" className="w-full sm:w-auto px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700">
+                                        Gerar PIX
+                                    </button>
+                                </div>
                             </div>
                             {/* Conteúdo Aba Boleto */}
                             <div id="content-boleto" className={`tab-content ${activeTab === 'boleto' ? 'block' : ''}`}>
-                                {/* ... (Conteúdo do Boleto) ... */}
+                                <div className="text-center">
+                                    <p className="text-lg text-gray-300 mb-4">O boleto bancário será gerado após a confirmação do pedido.</p>
+                                    <p className="text-sm text-gray-400 mb-6">Você poderá visualizar ou imprimir o boleto na próxima tela.</p>
+                                    <button type="button" className="w-full sm:w-auto px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700">
+                                        Gerar Boleto
+                                    </button>
+                                </div>
                             </div>
                         </section>
 
@@ -175,7 +188,7 @@ export default function CheckoutPage() {
                         </button>
                     </form>
 
-                    {/* Coluna da Direita: Resumo do Pedido */}
+                    {/* --- COLUNA DA DIREITA: RESUMO DO PEDIDO --- */}
                     <div className="lg:col-span-1 mt-10 lg:mt-0">
                         <div className="bg-gray-800 rounded-xl shadow-lg p-6 sticky top-24">
                             <h2 className="text-2xl font-semibold text-white mb-6">Resumo do Pedido</h2>
@@ -189,7 +202,8 @@ export default function CheckoutPage() {
                                             <img src={item.image} alt={item.name} className="w-20 h-20 rounded-md object-cover" />
                                             <div className="flex-grow">
                                                 <h4 className="font-semibold text-white">{item.name}</h4>
-                                                <p className="text-sm text-gray-400">Tamanho: {item.size}, Qtd: {item.quantity}</p>
+                                                {/* Atualizado para mostrar a COR */}
+                                                <p className="text-sm text-gray-400">Cor: {item.color}, Qtd: {item.quantity}</p>
                                                 <p className="font-bold text-white mt-1">{formatCurrency(item.price * item.quantity)}</p>
                                             </div>
                                         </div>
@@ -222,7 +236,20 @@ export default function CheckoutPage() {
             {/* Modal de Sucesso */}
             {showModal && (
                 <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
-                    {/* ... (Conteúdo do Modal) ... */}
+                    <div className="bg-gray-800 rounded-xl shadow-lg p-8 max-w-sm w-full text-center">
+                        <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-600">
+                            <svg className="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                        </div>
+                        <h3 className="text-2xl font-semibold text-white mt-6">Pagamento Concluído!</h3>
+                        <p className="text-gray-300 mt-2">Seu pedido foi processado com sucesso. Obrigado por comprar na Flashtech!</p>
+                        <Link href="/" legacyBehavior>
+                            <a className="w-full inline-block mt-6 bg-blue-600 text-white py-2 px-4 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">
+                                Voltar para a Home
+                            </a>
+                        </Link>
+                    </div>
                 </div>
             )}
         </>
