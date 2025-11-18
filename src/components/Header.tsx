@@ -13,7 +13,7 @@ export default function Header() {
           
           {/* --- LOGO --- */}
           <div className="flex-shrink-0">
-            <Link href="/" legacyBehavior>
+            <Link href="/store" legacyBehavior>
               <a className="text-3xl font-bold text-[#ffff]">Flashtech</a>
             </Link>
           </div>

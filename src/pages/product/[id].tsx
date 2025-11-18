@@ -6,6 +6,9 @@ import Head from 'next/head'; // Bom para o SEO
 import { mockProducts } from '../../data/products'; 
 
 export default function ProductDetailPage() {
+
+    let url: string = '';
+
     const router = useRouter();
     const { id } = router.query; // Pega o 'id' da URL
     const { addToCart } = useCart(); // Pega a função do nosso contexto
@@ -41,6 +44,7 @@ export default function ProductDetailPage() {
             name: product.name,
             price: product.price,
             image: imageForCart,
+            color: selectedColor
         };
         
         // Envia a COR selecionada
@@ -88,11 +92,19 @@ export default function ProductDetailPage() {
                                     <div 
                                         key={index}
                                         className={`cursor-pointer rounded-md border-2 aspect-square overflow-hidden bg-gray-900 ${mainImage === imgSrc ? 'border-blue-500' : 'border-transparent'} hover:border-blue-500`}
-                                        onClick={() => setMainImage(imgSrc)}
+                                        onClick={() => {
+                                            if (imgSrc instanceof Blob) {
+                                                url = URL.createObjectURL(imgSrc);
+                                                setMainImage(url);
+                                            } else if (typeof imgSrc === 'string') {
+                                                setMainImage(imgSrc);
+                                            }
+                                        }
+                                    }
                                     >
                                         <img
-                                            src={imgSrc}
-                                            alt={`miniatura ${index + 1}`}
+                                            src={url}
+                                            alt={`miniatura ${index}`}
                                             className="w-full h-full object-contain"
                                         />
                                     </div>

@@ -7,6 +7,7 @@ interface CartItem {
     price: number;
     image: string;
     size: string;
+    color: string;
     quantity: number;
 }
 
@@ -54,6 +55,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
                 price: itemToAdd.price,
                 image: itemToAdd.image,
                 size: size, // Pega o 'size' do argumento
+                color: itemToAdd.color,
                 quantity: quantity
             };
             setCartItems([...cartItems, newItem]);
