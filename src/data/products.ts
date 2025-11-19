@@ -17,9 +17,9 @@ export const mockProducts: Product[] = [
     id: '1', 
     name: 'Smartphone Pro X (128GB)', 
     price: 4299.90, 
-    image: 'https://m.media-amazon.com/images/I/71yzP2-Y-JL._AC_SL1500_.jpg',
+    image: 'https://m.media-amazon.com/images/I/61kE-oxS5QL._AC_SX522_.jpg',
     images: [
-        'https://m.media-amazon.com/images/I/71yzP2-Y-JL._AC_SL1500_.jpg',
+        'https://m.media-amazon.com/images/I/61kE-oxS5QL._AC_SX522_.jpg',
         'https://m.media-amazon.com/images/I/81I-Gk-S8qL._AC_SL1500_.jpg',
         'https://m.media-amazon.com/images/I/81qYRRavI2L._AC_SL1500_.jpg',
         'https://m.media-amazon.com/images/I/81mI8-S-h-L._AC_SL1500_.jpg'
