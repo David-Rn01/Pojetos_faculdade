@@ -6,18 +6,18 @@ import ProductCard from '../components/ProductCard'; // Usando caminho relativo
 // --- DADOS FICTÍCIOS (MOCK) ---
 // Este é o formato que o seu ProductCard.tsx espera
 const mockProducts = [
-  { id: '1', name: 'Smartphone Pro X (128GB, Tela 6.7")', price: 4299.90, image: 'https://m.media-amazon.com/images/I/61kE-oxS5QL._AC_SX522_.jpg', category: 'Smartphones' },
-  { id: '2', name: 'Notebook UltraSlim Flashtech', price: 7599.00, image: 'https://placehold.co/600x600/1e293b/94a3b8?text=Notebook', category: 'Notebooks' },
-  { id: '3', name: 'Fone de Ouvido Sem Fio Flashtech Bass', price: 899.90, image: 'https://placehold.co/600x600/1e293b/94a3b8?text=Fone', category: 'Acessórios' },
-  { id: '4', name: 'Smartwatch 2.0 GPS', price: 1899.50, image: 'https://placehold.co/600x600/1e293b/94a3b8?text=Watch', category: 'Acessórios' },
-  { id: '5', name: 'Carregador Rápido 65W', price: 299.00, image: 'https://placehold.co/600x600/1e293b/94a3b8?text=Carregador', category: 'Outros' },
-  { id: '6', name: 'Mouse Gamer Pro', price: 499.00, image: 'https://placehold.co/600x600/1e293b/94a3b8?text=Mouse', category: 'Periféricos' },
-  { id: '7', name: 'Monitor UltraWide 34"', price: 2799.00, image: 'https://placehold.co/600x600/1e293b/94a3b8?text=Monitor', category: 'Monitores' },
-  { id: '8', name: 'Teclado Mecânico RGB', price: 699.00, image: 'https://placehold.co/600x600/1e293b/94a3b8?text=Teclado', category: 'Periféricos' },
-  { id: '9', name: 'Teclado Mecânico RGB', price: 699.00, image: 'https://placehold.co/600x600/1e293b/94a3b8?text=Teclado', category: 'Periféricos' },
-  { id: '10', name: 'Teclado Mecânico RGB', price: 699.00, image: 'https://placehold.co/600x600/1e293b/94a3b8?text=Teclado', category: 'Periféricos' },
-  { id: '11', name: 'Teclado Mecânico RGB', price: 699.00, image: 'https://placehold.co/600x600/1e293b/94a3b8?text=Teclado', category: 'Periféricos' },
-  { id: '12', name: 'Teclado Mecânico RGB', price: 699.00, image: 'https://placehold.co/600x600/1e293b/94a3b8?text=Teclado', category: 'Periféricos' },
+  { id: '1', name: 'Smartphone Pro X (128GB, Tela 6.7")', price: 4299.90, image: 'https://m.media-amazon.com/images/I/61kE-oxS5QL._AC_SX522_.jpg', colors: ['Preto', 'Prata'], category: 'Smartphones' },
+  { id: '2', name: 'Notebook UltraSlim Flashtech', price: 7599.00, image: 'https://placehold.co/600x600/1e293b/94a3b8?text=Notebook', colors: ['Cinza', 'Prata'], category: 'Notebooks' },
+  { id: '3', name: 'Fone de Ouvido Sem Fio Flashtech Bass', price: 899.90, image: 'https://placehold.co/600x600/1e293b/94a3b8?text=Fone', colors: ['Preto', 'Branco'], category: 'Acessórios' },
+  { id: '4', name: 'Smartwatch 2.0 GPS', price: 1899.50, image: 'https://placehold.co/600x600/1e293b/94a3b8?text=Watch', colors: ['Preto', 'Dourado'], category: 'Acessórios' },
+  { id: '5', name: 'Carregador Rápido 65W', price: 299.00, image: 'https://placehold.co/600x600/1e293b/94a3b8?text=Carregador', colors: ['Branco'], category: 'Outros' },
+  { id: '6', name: 'Mouse Gamer Pro', price: 499.00, image: 'https://placehold.co/600x600/1e293b/94a3b8?text=Mouse', colors: ['Preto', 'RGB'], category: 'Periféricos' },
+  { id: '7', name: 'Monitor UltraWide 34"', price: 2799.00, image: 'https://placehold.co/600x600/1e293b/94a3b8?text=Monitor', colors: ['Preto'], category: 'Monitores' },
+  { id: '8', name: 'Teclado Mecânico RGB', price: 699.00, image: 'https://placehold.co/600x600/1e293b/94a3b8?text=Teclado', colors: ['Preto', 'Branco'], category: 'Periféricos' },
+  { id: '9', name: 'Teclado Mecânico RGB', price: 699.00, image: 'https://placehold.co/600x600/1e293b/94a3b8?text=Teclado', colors: ['Preto', 'Branco'], category: 'Periféricos' },
+  { id: '10', name: 'Teclado Mecânico RGB', price: 699.00, image: 'https://placehold.co/600x600/1e293b/94a3b8?text=Teclado', colors: ['Preto', 'Branco'], category: 'Periféricos' },
+  { id: '11', name: 'Teclado Mecânico RGB', price: 699.00, image: 'https://placehold.co/600x600/1e293b/94a3b8?text=Teclado', colors: ['Preto', 'Branco'], category: 'Periféricos' },
+  { id: '12', name: 'Teclado Mecânico RGB', price: 699.00, image: 'https://placehold.co/600x600/1e293b/94a3b8?text=Teclado', colors: ['Preto', 'Branco'], category: 'Periféricos' },
 ];
 // ------------------------------
 
