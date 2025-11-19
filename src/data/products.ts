@@ -167,4 +167,76 @@ export const mockProducts: Product[] = [
         'Keycaps: PBT Double-shot'
     ]
   },
+   { 
+    id: '9', 
+    name: 'Teclado Mecânico RGB', 
+    price: 699.00, 
+    image: 'https://m.media-amazon.com/images/I/716+3-1-5L._AC_SL1500_.jpg',
+    images: [
+        'https://m.media-amazon.com/images/I/716+3-1-5L._AC_SL1500_.jpg',
+        'https://m.media-amazon.com/images/I/71b3O-XaD+L._AC_SL1500_.jpg'
+    ],
+    colors: ['Switch Blue', 'Switch Red', 'Switch Brown'],
+    category: 'Periféricos',
+    description: 'Digite com estilo e precisão. Teclado mecânico com switches trocáveis, estrutura em alumínio e iluminação RGB por tecla.',
+    details: [
+        'Formato: TKL (Tenkeyless)',
+        'Conexão: USB-C removível',
+        'Keycaps: PBT Double-shot'
+    ]
+  },
+   { 
+    id: '10', 
+    name: 'Teclado Mecânico RGB', 
+    price: 699.00, 
+    image: 'https://m.media-amazon.com/images/I/716+3-1-5L._AC_SL1500_.jpg',
+    images: [
+        'https://m.media-amazon.com/images/I/716+3-1-5L._AC_SL1500_.jpg',
+        'https://m.media-amazon.com/images/I/71b3O-XaD+L._AC_SL1500_.jpg'
+    ],
+    colors: ['Switch Blue', 'Switch Red', 'Switch Brown'],
+    category: 'Periféricos',
+    description: 'Digite com estilo e precisão. Teclado mecânico com switches trocáveis, estrutura em alumínio e iluminação RGB por tecla.',
+    details: [
+        'Formato: TKL (Tenkeyless)',
+        'Conexão: USB-C removível',
+        'Keycaps: PBT Double-shot'
+    ]
+  },
+   { 
+    id: '11', 
+    name: 'Teclado Mecânico RGB', 
+    price: 699.00, 
+    image: 'https://m.media-amazon.com/images/I/716+3-1-5L._AC_SL1500_.jpg',
+    images: [
+        'https://m.media-amazon.com/images/I/716+3-1-5L._AC_SL1500_.jpg',
+        'https://m.media-amazon.com/images/I/71b3O-XaD+L._AC_SL1500_.jpg'
+    ],
+    colors: ['Switch Blue', 'Switch Red', 'Switch Brown'],
+    category: 'Periféricos',
+    description: 'Digite com estilo e precisão. Teclado mecânico com switches trocáveis, estrutura em alumínio e iluminação RGB por tecla.',
+    details: [
+        'Formato: TKL (Tenkeyless)',
+        'Conexão: USB-C removível',
+        'Keycaps: PBT Double-shot'
+    ]
+  },
+   { 
+    id: '12', 
+    name: 'Teclado Mecânico RGB', 
+    price: 699.00, 
+    image: 'https://m.media-amazon.com/images/I/716+3-1-5L._AC_SL1500_.jpg',
+    images: [
+        'https://m.media-amazon.com/images/I/716+3-1-5L._AC_SL1500_.jpg',
+        'https://m.media-amazon.com/images/I/71b3O-XaD+L._AC_SL1500_.jpg'
+    ],
+    colors: ['Switch Blue', 'Switch Red', 'Switch Brown'],
+    category: 'Periféricos',
+    description: 'Digite com estilo e precisão. Teclado mecânico com switches trocáveis, estrutura em alumínio e iluminação RGB por tecla.',
+    details: [
+        'Formato: TKL (Tenkeyless)',
+        'Conexão: USB-C removível',
+        'Keycaps: PBT Double-shot'
+    ]
+  },
 ];

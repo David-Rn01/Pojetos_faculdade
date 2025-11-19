@@ -14,6 +14,10 @@ const mockProducts = [
   { id: '6', name: 'Mouse Gamer Pro', price: 499.00, image: 'https://placehold.co/600x600/1e293b/94a3b8?text=Mouse', category: 'Periféricos' },
   { id: '7', name: 'Monitor UltraWide 34"', price: 2799.00, image: 'https://placehold.co/600x600/1e293b/94a3b8?text=Monitor', category: 'Monitores' },
   { id: '8', name: 'Teclado Mecânico RGB', price: 699.00, image: 'https://placehold.co/600x600/1e293b/94a3b8?text=Teclado', category: 'Periféricos' },
+  { id: '9', name: 'Teclado Mecânico RGB', price: 699.00, image: 'https://placehold.co/600x600/1e293b/94a3b8?text=Teclado', category: 'Periféricos' },
+  { id: '10', name: 'Teclado Mecânico RGB', price: 699.00, image: 'https://placehold.co/600x600/1e293b/94a3b8?text=Teclado', category: 'Periféricos' },
+  { id: '11', name: 'Teclado Mecânico RGB', price: 699.00, image: 'https://placehold.co/600x600/1e293b/94a3b8?text=Teclado', category: 'Periféricos' },
+  { id: '12', name: 'Teclado Mecânico RGB', price: 699.00, image: 'https://placehold.co/600x600/1e293b/94a3b8?text=Teclado', category: 'Periféricos' },
 ];
 // ------------------------------
 
