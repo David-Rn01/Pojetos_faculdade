@@ -17,7 +17,7 @@ const mockProducts = [
   { id: '9', name: 'Teclado Mecânico RGB', price: 699.00, image: 'https://placehold.co/600x600/1e293b/94a3b8?text=Teclado', colors: ['Preto', 'Branco'], category: 'Periféricos' },
   { id: '10', name: 'Teclado Mecânico RGB', price: 699.00, image: 'https://placehold.co/600x600/1e293b/94a3b8?text=Teclado', colors: ['Preto', 'Branco'], category: 'Periféricos' },
   { id: '11', name: 'Teclado Mecânico RGB', price: 699.00, image: 'https://placehold.co/600x600/1e293b/94a3b8?text=Teclado', colors: ['Preto', 'Branco'], category: 'Periféricos' },
-  { id: '12', name: 'Teclado Mecânico RGB', price: 699.00, image: 'https://placehold.co/600x600/1e293b/94a3b8?text=Teclado', colors: ['Preto', 'Branco'], category: 'Periféricos' },
+  { id: '12', name: 'Teclado Mecânico RGB', price: 999.00, image: 'https://placehold.co/600x600/1e293b/94a3b8?text=Teclado', colors: ['Preto', 'Branco'], category: 'Outros' },
 ];
 // ------------------------------
 
