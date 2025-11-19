@@ -77,7 +77,7 @@ export default function ProductDetailPage() {
                         
                         {/* --- Coluna da Esquerda: Galeria --- */}
                         <div className="p-6">
-                            <div className="aspect-square w-full relative bg-gray-900 rounded-lg overflow-hidden mb-4">
+                            <div className="aspect-square w-full relative bg-gray-100 rounded-lg overflow-hidden mb-4">
                                 {mainImage && (
                                     <img
                                         id="main-product-image"
