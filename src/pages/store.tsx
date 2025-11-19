@@ -6,7 +6,7 @@ import ProductCard from '../components/ProductCard'; // Usando caminho relativo
 // --- DADOS FICTÍCIOS (MOCK) ---
 // Este é o formato que o seu ProductCard.tsx espera
 const mockProducts = [
-  { id: '1', name: 'Smartphone Pro X (128GB, Tela 6.7")', price: 4299.90, image: 'https://placehold.co/600x600/1e293b/94a3b8?text=Smartphone', category: 'Smartphones' },
+  { id: '1', name: 'Samsung Galaxy S25 Ultra 5G 256GB', price: 7649.00, image: 'https://m.magazineluiza.com.br/a-static/420x420/samsung-galaxy-s25-ultra-5g-256gb-galaxy-ai-titanio-azul-69-12gb-ram-cam-quadrupla-200-50-10-50mp-bateria-5000mah-dual-chip/magazineluiza/238920600/ff9276f61022e47dcf89b5f0031cec0b.jpg', category: 'Smartphones' },
   { id: '2', name: 'Notebook UltraSlim Flashtech', price: 7599.00, image: 'https://placehold.co/600x600/1e293b/94a3b8?text=Notebook', category: 'Notebooks' },
   { id: '3', name: 'Fone de Ouvido Sem Fio Flashtech Bass', price: 899.90, image: 'https://placehold.co/600x600/1e293b/94a3b8?text=Fone', category: 'Acessórios' },
   { id: '4', name: 'Smartwatch 2.0 GPS', price: 1899.50, image: 'https://placehold.co/600x600/1e293b/94a3b8?text=Watch', category: 'Acessórios' },

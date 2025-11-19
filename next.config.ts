@@ -1,27 +1,29 @@
-import type { NextConfig } from 'next';
-
 /** @type {import('next').NextConfig} */
-const nextConfig: NextConfig = {
+const nextConfig = {
   reactStrictMode: true,
-  
-  // --- ADICIONE ESTA PARTE ---
   images: {
+   
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'placehold.co', // Domínio do erro atual
+        hostname: 'placehold.co',
         port: '',
         pathname: '/**',
       },
       {
         protocol: 'https',
-        hostname: 'm.media-amazon.com', // Domínio que você usou antes
+        hostname: 'm.media-amazon.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'm.magazineluiza.com.br',
         port: '',
         pathname: '/**',
       },
     ],
   },
-  // --------------------------
 };
 
 export default nextConfig;
