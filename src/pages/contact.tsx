@@ -26,7 +26,7 @@ export default function ContactPage() {
           </div>
           <button
             type="submit"
-            className="w-full p-3 rounded-lg text-white font-bold text-lg bg-gradient-to-r from-[#483078] to-[#301860] hover:opacity-90 transition-opacity duration-200"
+            className="w-full p-3 rounded-lg text-white font-bold text-lg bg-linear-to-r from-[#483078] to-[#301860] hover:opacity-90 transition-opacity duration-200"
           >
             Enviar Mensagem
           </button>
