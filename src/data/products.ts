@@ -19,7 +19,7 @@ export const mockProducts: Product[] = [
     price: 4299.90, 
     image: 'https://www.magazineluiza.com.br/samsung-galaxy-s25-ultra-5g-256gb-galaxy-ai-titanio-azul-69-12gb-ram-cam-quadrupla-200-50-10-50mp-bateria-5000mah-dual-chip/p/238920600/te/g25u/?&seller_id=magazineluiza&utm_source=google&utm_medium=cpc&utm_term=79684&utm_campaign=google_eco_per_ven_pla_mob_apo_1p_te-csp&utm_content=&partner_id=79684&gclsrc=aw.ds&gad_source=1&gad_campaignid=22578732921&gbraid=0AAAAAD4zZmSb5jRtGR85sdAqNSJdXMUlc&gclid=CjwKCAiA8vXIBhAtEiwAf3B-g-abF9Q0yRqyD-b9Pe6Y0eOhXGceW76806KLoHmLjzMs2a7hw1Vo-RoCMkUQAvD_BwE',
     images: [
-        'https://m.media-amazon.com/images/I/61kE-oxS5QL._AC_SX522_.jpg',
+        'https://m.media-amazon.com/images/I/51Adgl-DQtL._AC_SY300_SX300_QL70_ML2_.jpg',
         'https://m.media-amazon.com/images/I/81I-Gk-S8qL._AC_SL1500_.jpg',
         'https://m.media-amazon.com/images/I/81qYRRavI2L._AC_SL1500_.jpg',
         'https://m.media-amazon.com/images/I/81mI8-S-h-L._AC_SL1500_.jpg'

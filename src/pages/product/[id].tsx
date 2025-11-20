@@ -74,14 +74,15 @@ export default function ProductDetailPage() {
                         {/* --- Coluna da Esquerda: Galeria --- */}
                         <div className="p-6">
                             
-                            {/* Imagem Principal (Sem fundo azul, ajustada para conter a imagem) */}
-                            <div className="aspect-square w-full relative rounded-lg overflow-hidden mb-4 flex items-center justify-center">
+                            {/* Imagem Principal (Mantém o fundo azul e usa object-cover) */}
+                            <div className="aspect-square w-full relative rounded-lg overflow-hidden mb-4 bg-gray-100 flex items-center justify-center">
                                 {mainImage && (
                                     <img
                                         id="main-product-image"
                                         src={mainImage}
                                         alt={product.name}
-                                        className="w-full h-full object-contain"
+                                        // CORREÇÃO AQUI: Agora usa object-cover para preencher a caixa
+                                        className="w-full h-full object-cover" 
                                     />
                                 )}
                             </div>
@@ -91,13 +92,15 @@ export default function ProductDetailPage() {
                                 {product.images.map((imgSrc, index) => (
                                     <div 
                                         key={index}
-                                        className={`cursor-pointer rounded-md border-2 aspect-square overflow-hidden flex items-center justify-center ${mainImage === imgSrc ? 'border-blue-500' : 'border-transparent'} hover:border-blue-500`}
+                                        // CORREÇÃO AQUI: Mantém o fundo azul nas miniaturas também
+                                        className={`cursor-pointer rounded-md border-2 aspect-square overflow-hidden bg-gray-900 flex items-center justify-center ${mainImage === imgSrc ? 'border-blue-500' : 'border-transparent'} hover:border-blue-500`}
                                         onClick={() => setMainImage(imgSrc)}
                                     >
                                         <img
                                             src={imgSrc}
                                             alt={`miniatura ${index + 1}`}
-                                            className="w-full h-full object-contain"
+                                            // CORREÇÃO AQUI: object-cover para miniaturas também
+                                            className="w-full h-full object-cover"
                                         />
                                     </div>
                                 ))}
