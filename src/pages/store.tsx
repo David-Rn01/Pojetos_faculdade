@@ -96,7 +96,7 @@ const CategoryLink = ({ icon, name }: { icon: React.ReactNode, name: string }) =
     href="#"
     className="flex flex-col items-center justify-center p-6 bg-gray-800 rounded-lg shadow-md
                text-gray-300 hover:text-white
-               border border-gray-700 hover:border-blue-500 
+               border border-gray-700 hover:border-white 
                transition-all group"
   >
     <div className="text-gray-400 group-hover:text-blue-500 transition-colors">

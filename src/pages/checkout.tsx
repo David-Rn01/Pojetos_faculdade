@@ -162,7 +162,7 @@ export default function CheckoutPage() {
                                 <div className="text-center">
                                     <p className="text-lg text-gray-300 mb-4">Clique no botão abaixo para gerar um código PIX.</p>
                                     <p className="text-sm text-gray-400 mb-6">O código QR e o "Copia e Cola" serão exibidos após a confirmação do pedido.</p>
-                                    <button type="button" className="w-full sm:w-auto px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700">
+                                    <button type="button" className="w-full sm:w-auto px-8 py-3 bg-[#3859A3] text-white rounded-lg font-semibold hover:bg-blue-700">
                                         Gerar PIX
                                     </button>
                                 </div>
@@ -172,7 +172,7 @@ export default function CheckoutPage() {
                                 <div className="text-center">
                                     <p className="text-lg text-gray-300 mb-4">O boleto bancário será gerado após a confirmação do pedido.</p>
                                     <p className="text-sm text-gray-400 mb-6">Você poderá visualizar ou imprimir o boleto na próxima tela.</p>
-                                    <button type="button" className="w-full sm:w-auto px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700">
+                                    <button type="button" className="w-full sm:w-auto px-8 py-3 bg-[#3859A3] text-white rounded-lg font-semibold hover:bg-blue-700">
                                         Gerar Boleto
                                     </button>
                                 </div>
@@ -182,7 +182,7 @@ export default function CheckoutPage() {
                         {/* Botão de Finalizar Compra */}
                         <button
                             type="submit"
-                            className="w-full mt-8 bg-blue-600 text-white py-3 px-6 rounded-lg text-lg font-semibold shadow-md hover:bg-blue-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+                            className="w-full mt-8 bg-[#3859A3] text-white py-3 px-6 rounded-lg text-lg font-semibold shadow-md hover:bg-blue-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900"
                         >
                             Finalizar Compra
                         </button>
@@ -245,7 +245,7 @@ export default function CheckoutPage() {
                         <h3 className="text-2xl font-semibold text-white mt-6">Pagamento Concluído!</h3>
                         <p className="text-gray-300 mt-2">Seu pedido foi processado com sucesso. Obrigado por comprar na Flashtech!</p>
                         <Link href="/" legacyBehavior>
-                            <a className="w-full inline-block mt-6 bg-blue-600 text-white py-2 px-4 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">
+                            <a className="w-full inline-block mt-6 bg-[#3859A3] text-white py-2 px-4 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">
                                 Voltar para a Home
                             </a>
                         </Link>

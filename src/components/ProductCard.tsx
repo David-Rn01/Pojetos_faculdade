@@ -112,7 +112,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           className={`w-full py-3 px-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition-all duration-300 transform active:scale-95 ${
             isAdded 
               ? 'bg-green-600 text-white shadow-lg shadow-green-900/20' // Estilo quando adicionado
-              : 'bg-blue-600 text-white hover:bg-blue-500 shadow-lg shadow-blue-900/20 group-hover:shadow-blue-600/40' // Estilo normal
+              : 'bg-[#3859A3] text-white hover:bg-blue-500 shadow-lg shadow-blue-900/20 group-hover:shadow-blue-600/40' // Estilo normal
           }`}
         >
           {isAdded ? (
