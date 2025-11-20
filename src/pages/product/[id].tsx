@@ -1,40 +1,11 @@
-import { useState, useEffect, JSXElementConstructor, Key, ReactElement, ReactNode, ReactPortal, SetStateAction } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useCart } from '../../components/CartContext'; // Importa nosso hook
 import Head from 'next/head'; // Bom para o SEO
 // 1. IMPORTE O "BANCO DE DADOS"
 import { mockProducts } from '../../data/products'; 
 
-// --- DADOS FALSOS (MOCK) ---
-// No seu projeto real, você buscaria isso de um banco de dados
-// usando o `id` da URL.
-const mockProduct = {
-    id_base: 'PROD-001', // Este é o ID base do produto
-    name: 'Samsung Galax S25 Ultra 5G 256GB Galaxy AI Titânio Azul 6,9" 12GB RAM Câm. Quádrupla 200+50+10+50MP Bateria 5000mAh Dual Chip',
-    price: 7649,
-    images: [
-        'https://m.magazineluiza.com.br/a-static/420x420/samsung-galaxy-s25-ultra-5g-256gb-galaxy-ai-titanio-azul-69-12gb-ram-cam-quadrupla-200-50-10-50mp-bateria-5000mah-dual-chip/magazineluiza/238920600/ff9276f61022e47dcf89b5f0031cec0b.jpg',
-        'https://a-static.mlcdn.com.br/420x420/samsung-galaxy-s25-ultra-5g-256gb-galaxy-ai-titanio-azul-69-12gb-ram-cam-quadrupla-200-50-10-50mp-bateria-5000mah-dual-chip/magazineluiza/238920600/22d83f5e06001e60e816e60a6f55f1aa.jpg',
-        'https://a-static.mlcdn.com.br/420x420/samsung-galaxy-s25-ultra-5g-256gb-galaxy-ai-titanio-azul-69-12gb-ram-cam-quadrupla-200-50-10-50mp-bateria-5000mah-dual-chip/magazineluiza/238920600/26ee0491e7bc89b3bdf7efc38b4547e5.jpg',
-        'https://a-static.mlcdn.com.br/420x420/samsung-galaxy-s25-ultra-5g-256gb-galaxy-ai-titanio-azul-69-12gb-ram-cam-quadrupla-200-50-10-50mp-bateria-5000mah-dual-chip/magazineluiza/238920600/757c7054b3f58287b243bcef9e615ea2.jpg',
-    ],
-    description: 'O Galaxy S25 Ultra 5G Titânio Azul é o smartphone da Samsung com um design elegante e inovador. Ele possui tela Dynamic Amoled 2X de 6,9" com resolução QHD+ (3120 x 1440), que oferece imagens nítidas e vibrantes. A câmera traseira quádrupla de 200MP (Wide) + 50MP (Ultra Wide) 10MP (Tele) + 50MP (Tele), permite tirar fotos e vídeos de alta qualidade, com Zoom Digital até 100x e Óptico 5x. A câmera frontal de 12MP é ideal para selfies e videochamadas. Ele é equipado com 12GB de memória RAM, 256GB de armazenamento interno e processador Qualcomm Snapdragon 8 Elite for Galaxy (3nm) de 3.3GHz. Também conta com bateria de 5000mAh, que oferece autonomia para o dia todo. Vem com a nova geração do Galaxy AI, que oferece uma experiência personalizada e inteligente. O Cadeado Galaxy também está presente, garantindo mais segurança para o seu smartphone. É um smartphone completo, com um design elegante, uma tela incrível e um conjunto de câmeras de alta qualidade. Ele é ideal para quem busca um smartphone topo de linha. Acompanha 1 Caneta S Pen. Produto não acompanha fone de ouvido.',
-    details: [
-        '256GB de armazenamento interno',
-        '12GB de memória RAM',
-        '6,9" de tela',
-        'Câmera traseira quádrupla de 200MP + 50MP + 10MP + 50MP',
-        'Câmera frontal de 12MP',
-        'Bateria de 5000mAh'
-    ]
-};
-// --- FIM DOS DADOS FALSOS ---
-
-// ESTA É A LINHA IMPORTANTE
 export default function ProductDetailPage() {
-
-    let url: string = '';
-
     const router = useRouter();
     const { id } = router.query; // Pega o 'id' da URL
     const { addToCart } = useCart(); // Pega a função do nosso contexto
@@ -43,7 +14,6 @@ export default function ProductDetailPage() {
     const product = mockProducts.find(p => p.id === String(id));
 
     // 3. ESTADOS LOCAIS
-    // Iniciamos vazio e atualizamos via useEffect para evitar erros de hidrataçãoc
     const [selectedColor, setSelectedColor] = useState('');
     const [quantity, setQuantity] = useState(1);
     const [mainImage, setMainImage] = useState('');
@@ -64,16 +34,16 @@ export default function ProductDetailPage() {
     const handleAddToCart = () => {
         if (!product) return; 
 
-        const imageForCart = product.images[0]; // Usa a primeira imagem para o carrinho
+        const imageForCart = product.images[0]; 
 
         const itemToAdd = {
             name: product.name,
             price: product.price,
             image: imageForCart,
-            color: selectedColor
+            color: selectedColor,
         };
         
-        // Envia a COR selecionada
+        // Adiciona ao carrinho passando a COR selecionada
         addToCart(itemToAdd, quantity, selectedColor, product.id);
 
         // Mostra notificação
@@ -81,7 +51,7 @@ export default function ProductDetailPage() {
         setTimeout(() => setShowNotification(false), 2000);
     };
 
-    // 5. RENDERIZAÇÃO SE O PRODUTO NÃO EXISTIR
+    // Se a página ainda estiver carregando ou produto não existir
     if (!router.isReady) return null;
     if (!product) {
         return (
@@ -103,7 +73,9 @@ export default function ProductDetailPage() {
                         
                         {/* --- Coluna da Esquerda: Galeria --- */}
                         <div className="p-6">
-                            <div className="aspect-square w-full relative bg-gray-100 rounded-lg overflow-hidden mb-4">
+                            
+                            {/* Imagem Principal (Sem fundo azul, ajustada para conter a imagem) */}
+                            <div className="aspect-square w-full relative rounded-lg overflow-hidden mb-4 flex items-center justify-center">
                                 {mainImage && (
                                     <img
                                         id="main-product-image"
@@ -113,24 +85,18 @@ export default function ProductDetailPage() {
                                     />
                                 )}
                             </div>
+
+                            {/* Miniaturas */}
                             <div className="grid grid-cols-4 gap-4">
-                                {product.images.map((imgSrc: SetStateAction<string> | Blob | undefined, index: Key | null | undefined) => (
+                                {product.images.map((imgSrc, index) => (
                                     <div 
                                         key={index}
-                                        className={`cursor-pointer rounded-md border-2 aspect-square overflow-hidden bg-gray-900 ${mainImage === imgSrc ? 'border-blue-500' : 'border-transparent'} hover:border-blue-500`}
-                                        onClick={() => {
-                                            if (imgSrc instanceof Blob) {
-                                                url = URL.createObjectURL(imgSrc);
-                                                setMainImage(url);
-                                            } else if (typeof imgSrc === 'string') {
-                                                setMainImage(imgSrc);
-                                            }
-                                        }
-                                    }
+                                        className={`cursor-pointer rounded-md border-2 aspect-square overflow-hidden flex items-center justify-center ${mainImage === imgSrc ? 'border-blue-500' : 'border-transparent'} hover:border-blue-500`}
+                                        onClick={() => setMainImage(imgSrc)}
                                     >
                                         <img
-                                            src={url}
-                                            alt={`miniatura ${index}`}
+                                            src={imgSrc}
+                                            alt={`miniatura ${index + 1}`}
                                             className="w-full h-full object-contain"
                                         />
                                     </div>
@@ -156,13 +122,13 @@ export default function ProductDetailPage() {
                             </div>
 
                             <div className="mt-6">
-                                <h2 className="text-lg font-semibold text-gray-200">Descrição e ficha técnica:</h2>
+                                <h2 className="text-lg font-semibold text-gray-200">Sobre este item:</h2>
                                 <p className="mt-2 text-gray-300 leading-relaxed">
                                     {product.description}
                                 </p>
                                 {product.details && (
                                     <ul className="list-disc list-inside text-gray-300 mt-4 space-y-1">
-                                        {product.details.map((detail: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | null | undefined, i: Key | null | undefined) => <li key={i}>{detail}</li>)}
+                                        {product.details.map((detail, i) => <li key={i}>{detail}</li>)}
                                     </ul>
                                 )}
                             </div>
@@ -175,11 +141,9 @@ export default function ProductDetailPage() {
                                     value={selectedColor}
                                     onChange={(e) => setSelectedColor(e.target.value)}
                                     className="mt-1 block w-full pl-3 pr-10 py-2 text-base bg-gray-700 border-gray-600 text-white focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md"
-                                    
-                                    
                                 >
-                                    {product.colors && product.colors.map((color: any, idx: Key | null | undefined) => (
-                                        <option key={idx} value={String(color)}>{String(color)}</option>
+                                    {product.colors && product.colors.map(color => (
+                                        <option key={color} value={color}>{color}</option>
                                     ))}
                                 </select>
                             </div>
