@@ -1,14 +1,16 @@
-import { useState } from 'react';
+import { useState, useEffect, JSXElementConstructor, Key, ReactElement, ReactNode, ReactPortal, SetStateAction } from 'react';
 import { useRouter } from 'next/router';
 import { useCart } from '../../components/CartContext'; // Importa nosso hook
 import Head from 'next/head'; // Bom para o SEO
+// 1. IMPORTE O "BANCO DE DADOS"
+import { mockProducts } from '../../data/products'; 
 
 // --- DADOS FALSOS (MOCK) ---
 // No seu projeto real, você buscaria isso de um banco de dados
 // usando o `id` da URL.
 const mockProduct = {
     id_base: 'PROD-001', // Este é o ID base do produto
-    name: 'Samsung Galaxy S25 Ultra 5G 256GB Galaxy AI Titânio Azul 6,9" 12GB RAM Câm. Quádrupla 200+50+10+50MP Bateria 5000mAh Dual Chip',
+    name: 'Samsung Galax S25 Ultra 5G 256GB Galaxy AI Titânio Azul 6,9" 12GB RAM Câm. Quádrupla 200+50+10+50MP Bateria 5000mAh Dual Chip',
     price: 7649,
     images: [
         'https://m.magazineluiza.com.br/a-static/420x420/samsung-galaxy-s25-ultra-5g-256gb-galaxy-ai-titanio-azul-69-12gb-ram-cam-quadrupla-200-50-10-50mp-bateria-5000mah-dual-chip/magazineluiza/238920600/ff9276f61022e47dcf89b5f0031cec0b.jpg',
@@ -30,79 +32,121 @@ const mockProduct = {
 
 // ESTA É A LINHA IMPORTANTE
 export default function ProductDetailPage() {
+
+    let url: string = '';
+
     const router = useRouter();
-    
-    // --- LINHA CORRIGIDA (removido o '_') ---
-    const { id } = router.query; // Pega o 'id' da URL (ex: 'PROD-001')
-    
+    const { id } = router.query; // Pega o 'id' da URL
     const { addToCart } = useCart(); // Pega a função do nosso contexto
 
-    // Estado local da página (não do carrinho)
-    const [selectedSize, setSelectedSize] = useState('M');
+    // 2. ENCONTRE O PRODUTO CORRETO
+    const product = mockProducts.find(p => p.id === String(id));
+
+    // 3. ESTADOS LOCAIS
+    // Iniciamos vazio e atualizamos via useEffect para evitar erros de hidratação
+    const [selectedColor, setSelectedColor] = useState('');
     const [quantity, setQuantity] = useState(1);
-    const [mainImage, setMainImage] = useState(mockProduct.images[0]);
-
-    // Simula a notificação
+    const [mainImage, setMainImage] = useState('');
     const [showNotification, setShowNotification] = useState(false);
+    
+    // Quando o produto carregar, define a cor e imagem padrão
+    useEffect(() => {
+        if (product) {
+            setMainImage(product.images[0]);
+            // Define a primeira cor como padrão se existir
+            if (product.colors && product.colors.length > 0) {
+                setSelectedColor(product.colors[0]);
+            }
+        }
+    }, [product]);
 
+    // 4. LÓGICA DE ADICIONAR AO CARRINHO
     const handleAddToCart = () => {
-        // Pega a imagem menor para o carrinho
-        const imageForCart = mockProduct.images[0].replace('600x600', '80x80');
+        if (!product) return; 
 
-        // Este é o item base, sem o ID final do carrinho
+        const imageForCart = product.images[0]; // Usa a primeira imagem para o carrinho
+
         const itemToAdd = {
-            name: mockProduct.name,
-            price: mockProduct.price,
+            name: product.name,
+            price: product.price,
             image: imageForCart,
+            color: selectedColor
         };
         
-        // Nós passamos o item, a quantidade, o tamanho e o ID base
-        addToCart(itemToAdd, quantity, selectedSize, mockProduct.id_base);
+        // Envia a COR selecionada
+        addToCart(itemToAdd, quantity, selectedColor, product.id);
 
         // Mostra notificação
         setShowNotification(true);
         setTimeout(() => setShowNotification(false), 2000);
     };
 
+    // 5. RENDERIZAÇÃO SE O PRODUTO NÃO EXISTIR
+    if (!router.isReady) return null;
+    if (!product) {
+        return (
+            <div className="text-center text-white text-xl p-10 min-h-[50vh] flex items-center justify-center">
+                Produto não encontrado.
+            </div>
+        );
+    }
+
     return (
         <>
             <Head>
-                {/* O 'id' da URL é o ID do produto */}
-                <title>{mockProduct.name} (ID: {id}) - Flashtech</title>
+                <title>{product.name} - Flashtech</title>
             </Head>
 
             <main className="w-full">
                 <div className="bg-gray-800 rounded-xl shadow-lg overflow-hidden">
                     <div className="md:grid md:grid-cols-2">
-                        {/* Coluna da Esquerda: Galeria */}
+                        
+                        {/* --- Coluna da Esquerda: Galeria --- */}
                         <div className="p-6">
-                            <img
-                                id="main-product-image"
-                                src={mainImage}
-                                alt="Imagem principal do produto"
-                                className="w-full h-auto object-cover rounded-lg shadow-md aspect-square"
-                            />
-                            <div className="grid grid-cols-4 gap-4 mt-4">
-                                {mockProduct.images.map((imgSrc, index) => (
+                            <div className="aspect-square w-full relative bg-gray-100 rounded-lg overflow-hidden mb-4">
+                                {mainImage && (
                                     <img
-                                        key={index}
-                                        src={imgSrc.replace('600x600', '150x150')}
-                                        alt={`miniatura ${index + 1}`}
-                                        className={`cursor-pointer rounded-md border-2 ${mainImage === imgSrc ? 'border-blue-500' : 'border-transparent'
-                                            } hover:border-blue-500`}
-                                        onClick={() => setMainImage(imgSrc)}
+                                        id="main-product-image"
+                                        src={mainImage}
+                                        alt={product.name}
+                                        className="w-full h-full object-contain"
                                     />
+                                )}
+                            </div>
+                            <div className="grid grid-cols-4 gap-4">
+                                {product.images.map((imgSrc: SetStateAction<string> | Blob | undefined, index: Key | null | undefined) => (
+                                    <div 
+                                        key={index}
+                                        className={`cursor-pointer rounded-md border-2 aspect-square overflow-hidden bg-gray-900 ${mainImage === imgSrc ? 'border-blue-500' : 'border-transparent'} hover:border-blue-500`}
+                                        onClick={() => {
+                                            if (imgSrc instanceof Blob) {
+                                                url = URL.createObjectURL(imgSrc);
+                                                setMainImage(url);
+                                            } else if (typeof imgSrc === 'string') {
+                                                setMainImage(imgSrc);
+                                            }
+                                        }
+                                    }
+                                    >
+                                        <img
+                                            src={url}
+                                            alt={`miniatura ${index}`}
+                                            className="w-full h-full object-contain"
+                                        />
+                                    </div>
                                 ))}
                             </div>
                         </div>
 
-                        {/* Coluna da Direita: Informações */}
+                        {/* --- Coluna da Direita: Informações --- */}
                         <div className="p-8">
-                            <h1 className="text-3xl font-bold tracking-tight text-white">{mockProduct.name}</h1>
-                            <p className="text-gray-400 text-sm mt-1">Product ID: {id}</p>
+                            <h1 className="text-3xl font-bold tracking-tight text-white">{product.name}</h1>
+                            <p className="text-gray-400 text-sm mt-1">Ref: {product.id}</p>
 
                             <div className="mt-4">
-                                <span className="text-4xl font-extrabold text-white">R$ {mockProduct.price.toFixed(2).replace('.', ',')}</span>
+                                <span className="text-4xl font-extrabold text-white">
+                                    {new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(product.price)}
+                                </span>
                                 <span className="text-base text-gray-400 ml-2">em até 10x sem juros</span>
                             </div>
 
@@ -114,27 +158,33 @@ export default function ProductDetailPage() {
                             <div className="mt-6">
                                 <h2 className="text-lg font-semibold text-gray-200">Descrição e ficha técnica:</h2>
                                 <p className="mt-2 text-gray-300 leading-relaxed">
-                                    {mockProduct.description}
+                                    {product.description}
                                 </p>
-                                <ul className="list-disc list-inside text-gray-300 mt-4 space-y-1">
-                                    {mockProduct.details.map((detail, i) => <li key={i}>{detail}</li>)}
-                                </ul>
+                                {product.details && (
+                                    <ul className="list-disc list-inside text-gray-300 mt-4 space-y-1">
+                                        {product.details.map((detail: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | null | undefined, i: Key | null | undefined) => <li key={i}>{detail}</li>)}
+                                    </ul>
+                                )}
                             </div>
 
+                            {/* --- SELEÇÃO DE COR --- */}
                             <div className="mt-6">
-                                <label htmlFor="size" className="block text-sm font-medium text-gray-300">Tamanho:</label>
+                                <label htmlFor="color" className="block text-sm font-medium text-gray-300">Cor:</label>
                                 <select
-                                    id="size"
-                                    value={selectedSize}
-                                    onChange={(e) => setSelectedSize(e.target.value)}
+                                    id="color"
+                                    value={selectedColor}
+                                    onChange={(e) => setSelectedColor(e.target.value)}
                                     className="mt-1 block w-full pl-3 pr-10 py-2 text-base bg-gray-700 border-gray-600 text-white focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md"
+                                    
+                                    
                                 >
-                                    <option value="P">Pequeno (P)</option>
-                                    <option value="M">Médio (M)</option>
-                                    <option value="G">Grande (G)</option>
+                                    {product.colors && product.colors.map((color: any, idx: Key | null | undefined) => (
+                                        <option key={idx} value={String(color)}>{String(color)}</option>
+                                    ))}
                                 </select>
                             </div>
 
+                            {/* --- QUANTIDADE --- */}
                             <div className="mt-6">
                                 <label htmlFor="quantity" className="block text-sm font-medium text-gray-300">Quantidade:</label>
                                 <div className="flex items-center mt-1">
@@ -172,7 +222,7 @@ export default function ProductDetailPage() {
 
                 {/* Notificação */}
                 <div
-                    className={`fixed bottom-10 right-10 bg-white text-gray-900 font-semibold py-3 px-6 rounded-lg shadow-lg transition-all duration-300 ${showNotification ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                    className={`fixed bottom-10 right-10 bg-white text-gray-900 font-semibold py-3 px-6 rounded-lg shadow-lg transition-all duration-300 z-50 ${showNotification ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
                         }`}
                 >
                     Item adicionado ao carrinho!

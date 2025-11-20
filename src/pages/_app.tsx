@@ -26,7 +26,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
         {/* 4. O 'main' envolve a página atual (ex: store.tsx, [id].tsx) */}
         {/* Adicionado padding aqui para dar espaço nas laterais */}
-        <main className="flex-grow max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8">
+        <main className="grow max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8">
           <Component {...pageProps} />
         </main>
 

@@ -7,6 +7,7 @@ interface CartItem {
     price: number;
     image: string;
     size: string;
+    color: string;
     quantity: number;
 }
 
@@ -25,7 +26,7 @@ interface ICartContext {
 }
 
 // Cria o contexto
-const CartContext = createContext<ICartContext | undefined>(undefined);
+const CartContext = createContext<ICartContext | null>(null);
 
 // Define o Provedor (o componente que vai "segurar" o estado)
 export function CartProvider({ children }: { children: ReactNode }) {
@@ -54,6 +55,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
                 price: itemToAdd.price,
                 image: itemToAdd.image,
                 size: size, // Pega o 'size' do argumento
+                color: itemToAdd.color,
                 quantity: quantity
             };
             setCartItems([...cartItems, newItem]);
@@ -110,7 +112,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
 // Hook customizado (para facilitar o uso)
 export function useCart() {
     const context = useContext(CartContext);
-    if (context === undefined) {
+    if (context === null) {
         throw new Error('useCart deve ser usado dentro de um CartProvider');
     }
     return context;
