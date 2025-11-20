@@ -7,7 +7,7 @@ import ProductCard from '../components/ProductCard'; // Usando caminho relativo
 // Este é o formato que o seu ProductCard.tsx espera
 const mockProducts = [
   { id: '1', name: 'Smartphone Pro X (128GB, Tela 6.7")', price: 4299.90, image: 'https://m.media-amazon.com/images/I/61kE-oxS5QL._AC_SX522_.jpg', colors: ['Preto', 'Prata'], category: 'Smartphones' },
-  { id: '2', name: 'Notebook UltraSlim Flashtech', price: 7599.00, image: 'https://placehold.co/600x600/1e293b/94a3b8?text=Notebook', colors: ['Cinza', 'Prata'], category: 'Notebooks' },
+  { id: '2', name: 'Notebook UltraSlim Flashtech', price: 7599.00, image: 'https://m.media-amazon.com/images/I/51LAU1+ACrL._AC_SX679_.jpg', colors: ['Cinza', 'Prata'], category: 'Notebooks' },
   { id: '3', name: 'Fone de Ouvido Sem Fio Flashtech Bass', price: 899.90, image: 'https://placehold.co/600x600/1e293b/94a3b8?text=Fone', colors: ['Preto', 'Branco'], category: 'Acessórios' },
   { id: '4', name: 'Smartwatch 2.0 GPS', price: 1899.50, image: 'https://placehold.co/600x600/1e293b/94a3b8?text=Watch', colors: ['Preto', 'Dourado'], category: 'Acessórios' },
   { id: '5', name: 'Carregador Rápido 65W', price: 299.00, image: 'https://placehold.co/600x600/1e293b/94a3b8?text=Carregador', colors: ['Branco'], category: 'Outros' },
