@@ -97,7 +97,7 @@ export const mockProducts: Product[] = [
   { 
     id: '5', 
     name: 'Carregador Rápido 65W', 
-    price: 299.00, 
+    price: 150.00, 
     image: 'https://www.magazineluiza.com.br/carregador-usb-c-certificado-pela-apple-pacote-de-2-m-para-iphone-lightning-kruidvat/p/kb5h0j5c6d/te/spcl/?seller_id=nocnocestadosunidos',
     images: [
         'https://m.media-amazon.com/images/I/51j3fP-y6dL._AC_SL1000_.jpg',
