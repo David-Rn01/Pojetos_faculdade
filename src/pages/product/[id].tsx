@@ -43,7 +43,7 @@ export default function ProductDetailPage() {
     const product = mockProducts.find(p => p.id === String(id));
 
     // 3. ESTADOS LOCAIS
-    // Iniciamos vazio e atualizamos via useEffect para evitar erros de hidratação
+    // Iniciamos vazio e atualizamos via useEffect para evitar erros de hidrataçãoc
     const [selectedColor, setSelectedColor] = useState('');
     const [quantity, setQuantity] = useState(1);
     const [mainImage, setMainImage] = useState('');
