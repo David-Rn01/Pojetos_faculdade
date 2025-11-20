@@ -16,80 +16,82 @@ export const mockProducts: Product[] = [
   { 
     id: '1', 
     name: 'Smartphone Pro X (128GB)', 
-    price: 4299.90, 
-    image: 'https://www.magazineluiza.com.br/samsung-galaxy-s25-ultra-5g-256gb-galaxy-ai-titanio-azul-69-12gb-ram-cam-quadrupla-200-50-10-50mp-bateria-5000mah-dual-chip/p/238920600/te/g25u/?&seller_id=magazineluiza&utm_source=google&utm_medium=cpc&utm_term=79684&utm_campaign=google_eco_per_ven_pla_mob_apo_1p_te-csp&utm_content=&partner_id=79684&gclsrc=aw.ds&gad_source=1&gad_campaignid=22578732921&gbraid=0AAAAAD4zZmSb5jRtGR85sdAqNSJdXMUlc&gclid=CjwKCAiA8vXIBhAtEiwAf3B-g-abF9Q0yRqyD-b9Pe6Y0eOhXGceW76806KLoHmLjzMs2a7hw1Vo-RoCMkUQAvD_BwE',
+    price: 7649.00, 
+    image: 'https://m.media-amazon.com/images/I/61DQDWS45CL._AC_SX425_.jpg',
     images: [
-        'https://m.media-amazon.com/images/I/51Adgl-DQtL._AC_SY300_SX300_QL70_ML2_.jpg',
-        'https://m.media-amazon.com/images/I/81I-Gk-S8qL._AC_SL1500_.jpg',
-        'https://m.media-amazon.com/images/I/81qYRRavI2L._AC_SL1500_.jpg',
-        'https://m.media-amazon.com/images/I/81mI8-S-h-L._AC_SL1500_.jpg'
+        'https://m.media-amazon.com/images/I/61DQDWS45CL._AC_SX425_.jpg',
+        'https://m.media-amazon.com/images/I/61ZCfdn4wEL._AC_SX425_.jpg',
+        'https://m.media-amazon.com/images/I/71YIkrQRuyL._AC_SX425_.jpg',
+        'https://m.media-amazon.com/images/I/71UWP+YktoL._AC_SX425_.jpg'
     ],
-    colors: ['Titânio Preto', 'Titânio Branco', 'Titânio Azul'],
+    colors: ['Titânio Cinza', 'Preto Ônix', 'Branco Pérola'],
     category: 'Smartphones',
-    description: 'O Smartphone Pro X redefine a velocidade. Com chip A17, câmera de 48MP e tela ProMotion de 120Hz, é a ferramenta definitiva para criadores.',
+    description: 'Celular Samsung Galaxy S25 Ultra 5G, 256GB, 12GB RAM, Câmera Quádrupla de 200+50+10+50, Tela Grande de 6.9", Titânio Cinza',
     details: [
         'Tela: 6.7" Super Retina XDR',
-        'Chip: A17 Pro',
+        'snapdragon 8 Gen 3',
         'Material: Titânio grau 5',
-        'Conexão: USB-C 3.0'
+        'Câmera: Tripla 48MP + 12MP + 12MP',
+        'Bateria: Até 23 horas de reprodução de vídeo'
     ]
   },
   { 
     id: '2', 
-    name: 'Notebook UltraSlim Flashtech', 
-    price: 7599.00, 
-    image: 'https://www.magazineluiza.com.br/macbook-air-apple-13-chip-m4-cpu-10-nucleos-gpu-8-nucleos-neural-engine-16-nucleos-16gb-ram-ssd-256gb-meia-noite-mw123bz-a/p/bee45d2jg5/in/mack/?seller_id=kabum',
+    name: 'macBook Air UltraSlim M4', 
+    price: 9015.50, 
+    image: 'https://m.media-amazon.com/images/I/51xUXDpOifL._AC_SX342_.jpg',
     images: [
-        'https://m.media-amazon.com/images/I/71jG+e7roXL._AC_SL1500_.jpg',
-        'https://m.media-amazon.com/images/I/7106jNnZa+L._AC_SL1500_.jpg',
-        'https://m.media-amazon.com/images/I/71oT-8W5-XL._AC_SL1500_.jpg'
+        'https://m.media-amazon.com/images/I/518QcC9GpDL._AC_SX342_.jpg',
+        'https://m.media-amazon.com/images/I/51Fqdb2iQIL._AC_SX342_.jpg',
+        'https://m.media-amazon.com/images/I/51xUXDpOifL._AC_SX342_.jpg',
+        'https://m.media-amazon.com/images/I/41ZB3oRQm5L._AC_SL1000_.jpg',
     ],
-    colors: ['Cinza Espacial', 'Prata'],
+    colors: ['Prata', 'Cinza Espacial', 'Dourado'],
     category: 'Notebooks',
-    description: 'Leve, poderoso e pronto para tudo. O UltraSlim vem com o novo processador M3, 18 horas de bateria e uma tela Liquid Retina espetacular.',
+    description: 'Leve, potente e elegante. O MacBook Air UltraSlim com chip M4 oferece desempenho excepcional em um design ultrafino e leve.',
     details: [
-        'Tela: 14.2" Liquid Retina',
-        'Chip: M3 com GPU 10 núcleos',
-        'Memória: 16GB RAM Unificada',
-        'Armazenamento: 512GB SSD'
+        'Tela: Retina de 13.6"',
+        'Processador: Apple M4',
+        'Memória RAM: 16GB',
+        'Armazenamento: 512GB SSD',
+        'Bateria: Até 18 horas de uso'
     ]
   },
   { 
     id: '3', 
-    name: 'Fone de Ouvido Flashtech Bass', 
-    price: 899.90, 
-    image: 'https://www.magazineluiza.com.br/airpods-4-apple-com-estojo-de-recarga-usb-c-branco-mxp63bz-a/p/dfa1g7kfb4/ea/aair/?seller_id=kabum',
+    name: 'Aipods 4ª Geração Flashtech', 
+    price: 1149.90, 
+    image: 'https://m.media-amazon.com/images/I/41WMBnjyitL._AC_SX342_.jpg',
     images: [
-        'https://m.media-amazon.com/images/I/61v02CJ6cJL._AC_SL1500_.jpg',
-        'https://m.media-amazon.com/images/I/719hDk8t0iL._AC_SL1500_.jpg',
-        'https://m.media-amazon.com/images/I/71b2Vl-5-7L._AC_SL1500_.jpg'
+        'https://m.media-amazon.com/images/I/41WMBnjyitL._AC_SX342_.jpg',
+        'https://m.media-amazon.com/images/I/41paWip4xcL._AC_SX342_.jpg',
+        'https://m.media-amazon.com/images/I/51vWvXkZRwL._AC_SX342_.jpg'
     ],
-    colors: ['Preto Fosco', 'Branco Neve'],
-    category: 'Acessórios',
-    description: 'Sinta a batida. Cancelamento de ruído ativo de nível profissional, som imersivo 360 e um design confortável para usar o dia todo.',
+    colors: [ 'Branco', ],
+    category: 'Áudio',
+    description: 'Mergulhe no som com o Fone de Ouvido Flashtech Bass. Drivers de alta fidelidade e cancelamento de ruído ativo para uma experiência sonora imersiva.',
     details: [
-        'Cancelamento de Ruído: Ativo (ANC)',
-        'Bateria: 24h (com estojo)',
-        'Resistência: IPX7 (água e suor)'
+        'Tipo: Over-Ear com Cancelamento de Ruído Ativo',
     ]
   },
   { 
     id: '4', 
-    name: 'Smartwatch 2.0 GPS', 
-    price: 1899.50, 
+    name: 'apple watch Se 3', 
+    price: 3200.50, 
     image: 'https://www.magazineluiza.com.br/apple-watch-se-3-gps-caixa-estelar-de-aluminio-40mm-pulseira-esportiva-estelar-p-m/p/240598400/te/wats/?seller_id=magazineluiza',
     images: [
-        'https://m.media-amazon.com/images/I/61s4-e5v0ZL._AC_SL1500_.jpg',
-        'https://m.media-amazon.com/images/I/71L-l1jK1dL._AC_SL1500_.jpg',
+        'https://m.media-amazon.com/images/I/41H4AoY5xbL._AC_SX342_.jpg',
+        'https://m.media-amazon.com/images/I/41-c3pK4VvL._AC_SX342_.jpg',
         'https://m.media-amazon.com/images/I/71XMTLtZd5L._AC_SL1500_.jpg'
     ],
-    colors: ['Preto Meia-noite', 'Estelar', 'Vermelho'],
+    colors: ['luz das estrelas','Creme', 'black'],
     category: 'Acessórios',
-    description: 'Seu parceiro de treino ideal. Com GPS integrado, monitoramento cardíaco avançado e resistência à água, o Smartwatch 2.0 acompanha seu ritmo.',
+    description: 'Apple Watch SE GPS • Caixa estelar de alumínio – 40 mm • Pulseira esportiva estelar – M/G',
     details: [
-        'Tela: OLED Sempre Ativa',
+        'Tecnologia de conectividade	Bluetooth, USB, Wi-F',
         'Sensores: Cardíaco, Oxigênio no sangue',
-        'Conectividade: GPS + Cellular'
+        'Conectividade: GPS + Cellular',
+        'Tamanho da tela	40', 
     ]
   },
   { 

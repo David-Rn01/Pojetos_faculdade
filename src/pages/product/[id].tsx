@@ -72,28 +72,28 @@ export default function ProductDetailPage() {
                     <div className="md:grid md:grid-cols-2">
                         
                         {/* --- Coluna da Esquerda: Galeria --- */}
-                        <div className="p-6">
+                        <div className="p-10">
                             
                             {/* Imagem Principal (Mantém o fundo azul e usa object-cover) */}
-                            <div className="aspect-square w-full relative rounded-lg overflow-hidden mb-4 bg-gray-100 flex items-center justify-center">
+                            <div className="aspect-square w-full relative rounded-lg overflow-hidden mb-4 bg-white flex items-center justify-center">
                                 {mainImage && (
                                     <img
                                         id="main-product-image"
                                         src={mainImage}
                                         alt={product.name}
                                         // CORREÇÃO AQUI: Agora usa object-cover para preencher a caixa
-                                        className="w-full h-full object-cover" 
+                                        className="" 
                                     />
                                 )}
                             </div>
 
                             {/* Miniaturas */}
-                            <div className="grid grid-cols-4 gap-4">
+                            <div className="grid grid-cols-3 gap-2">
                                 {product.images.map((imgSrc, index) => (
                                     <div 
                                         key={index}
                                         // CORREÇÃO AQUI: Mantém o fundo azul nas miniaturas também
-                                        className={`cursor-pointer rounded-md border-2 aspect-square overflow-hidden bg-gray-900 flex items-center justify-center ${mainImage === imgSrc ? 'border-blue-500' : 'border-transparent'} hover:border-blue-500`}
+                                        className={`cursor-pointer rounded-md border-2 aspect-square overflow-hidden bg-white flex items-center justify-center ${mainImage === imgSrc ? 'border-blue-500' : 'border-transparent'} hover:border-blue-500`}
                                         onClick={() => setMainImage(imgSrc)}
                                     >
                                         <img
