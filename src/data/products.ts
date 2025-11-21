@@ -100,16 +100,18 @@ export const mockProducts: Product[] = [
     price: 150.00, 
     image: 'https://www.magazineluiza.com.br/carregador-usb-c-certificado-pela-apple-pacote-de-2-m-para-iphone-lightning-kruidvat/p/kb5h0j5c6d/te/spcl/?seller_id=nocnocestadosunidos',
     images: [
-        'https://m.media-amazon.com/images/I/51j3fP-y6dL._AC_SL1000_.jpg',
-        'https://m.media-amazon.com/images/I/61g+w0Wj-oL._AC_SL1500_.jpg'
+        'https://m.media-amazon.com/images/I/5166ogGvNYL._AC_SL1500_.jpg',
+        'https://m.media-amazon.com/images/I/61PduSmu8GL._AC_SL1500_.jpg'
     ],
-    colors: ['Branco', 'Preto'],
+    colors: ['Branco'],
     category: 'Outros',
-    description: 'Carregue tudo com um único adaptador. Tecnologia GaN para carregamento ultrarrápido de 65W em um tamanho compacto.',
+    description: 'Conecte seu aparelho com conector Lightning a um dispositivo com porta USB-C ou Thunderbolt 3 (USB-C) para recarregar e sincronizar. Você também pode conectá-lo ao seu iPad com USB-C para recarregar. Você também pode usar este cabo com o adaptador de energia USB-C da Apple de 18W, 20W, 29W, 30W, 61W, 87W ou 96W para recarregar seu aparelho com iOS e ainda aproveitar o recurso de recarga rápida em alguns modelos de iPhone e iPad.',
     details: [
-        'Potência: 65W',
-        'Portas: 2x USB-C, 1x USB-A',
-        'Tecnologia: GaN (Nitreto de Gálio)'
+        'Marca	Apple',
+        'Tipo de conector	Lightning, USB tipo C',
+        'Tipo de cabo	USB',
+        'Dispositivos compatíveis	Smartphone',
+        'Características especiais	Carregamento rápido'
     ]
   },
   { 
@@ -138,17 +140,18 @@ export const mockProducts: Product[] = [
     price: 2799.00, 
     image: 'https://m.media-amazon.com/images/I/71-6j-a7uGL._AC_SL1500_.jpg',
     images: [
-        'https://m.media-amazon.com/images/I/71-6j-a7uGL._AC_SL1500_.jpg',
-        'https://m.media-amazon.com/images/I/81+M-j-i-7L._AC_SL1500_.jpg'
+        'https://m.media-amazon.com/images/I/81x-2JD6s7L._AC_SX679_.jpg',
+        'https://m.media-amazon.com/images/I/81dyiwWPbXL._AC_SX679_.jpg'
     ],
-    colors: ['Preto'],
+    colors: ['fosco'],
     category: 'Monitores',
-    description: 'Expanda seus horizontes. Monitor curvo UltraWide com taxa de atualização de 144Hz para imersão total em jogos e produtividade.',
+    description: 'MONITOR SAMSUNG ODYSSEY OLED G9 49 Tela curva de 49" Dual QHD. Com uma tela Super Ultra-Wide.Monitor Oled. Monitor 49" curvo. Com uma tela Super Ultra-Wide',
     details: [
-        'Resolução: WQHD (3440 x 1440)',
-        'Painel: IPS Curvo',
-        'Taxa de Atualização: 144Hz',
-        'Tempo de Resposta: 1ms'
+        'Marca	Samsung',
+        'Tamanho da tela	49 Polegadas',
+        'Resolução	DQHD (5,120 x 1,440)',
+        'Proporção de tela	32:9',
+        'Descrição da superfície da tela	Fosco'
     ]
   },
   { 
@@ -189,20 +192,23 @@ export const mockProducts: Product[] = [
   },
    { 
     id: '10', 
-    name: 'Teclado Mecânico RGB', 
+    name: 'Mesa Gamer KBM', 
     price: 699.00, 
     image: 'https://m.media-amazon.com/images/I/716+3-1-5L._AC_SL1500_.jpg',
     images: [
-        'https://m.media-amazon.com/images/I/716+3-1-5L._AC_SL1500_.jpg',
-        'https://m.media-amazon.com/images/I/71b3O-XaD+L._AC_SL1500_.jpg'
+        'https://m.media-amazon.com/images/I/71zC-rO-UQL._AC_SX679_.jpg',
+        'https://m.media-amazon.com/images/I/617R75NGlBL._AC_SX679_.jpg'
     ],
-    colors: ['Switch Blue', 'Switch Red', 'Switch Brown'],
-    category: 'Periféricos',
-    description: 'Digite com estilo e precisão. Teclado mecânico com switches trocáveis, estrutura em alumínio e iluminação RGB por tecla.',
+    colors: ['Preto'],
+    category: 'Acessórios',
+    description: 'Mesa, gamer, Escrivaninha.',
     details: [
-        'Formato: TKL (Tenkeyless)',
-        'Conexão: USB-C removível',
-        'Keycaps: PBT Double-shot'
+        'Marca	Genérico',
+        'Forma	Retangular',
+        'Design de mesa	Escrivaninha',
+        'Dimensões do produto	60P x 120L x 73A centímetros',
+        'Cor	Preto',
+        'Etilo Gamer'
     ]
   },
    { 
