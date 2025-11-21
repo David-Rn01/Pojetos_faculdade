@@ -43,7 +43,7 @@ export default function StorePage() {
             <Link
               href="#destaques"
               className="inline-block text-white font-bold py-3 px-8 rounded-lg transition-colors
-                           bg-blue-600 hover:bg-blue-700
+                           bg-[#3859A3] hover:bg-blue-700
                            focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
             >
               Ver Ofertas
