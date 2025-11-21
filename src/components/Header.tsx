@@ -20,7 +20,7 @@ export default function Header() {
         <div className="flex justify-between items-center h-20">
           
           {/* LOGO */}
-          <div className="flex-shrink-0">
+          <div className="shrink-0">
             <Link href="/" legacyBehavior>
               <a className="text-3xl font-bold text-[#ffff]">Flashtech</a>
             </Link>
