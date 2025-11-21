@@ -193,7 +193,7 @@ export const mockProducts: Product[] = [
    { 
     id: '10', 
     name: 'Mesa Gamer KBM', 
-    price: 699.00, 
+    price: 799.00, 
     image: 'https://m.media-amazon.com/images/I/716+3-1-5L._AC_SL1500_.jpg',
     images: [
         'https://m.media-amazon.com/images/I/71zC-rO-UQL._AC_SX679_.jpg',
