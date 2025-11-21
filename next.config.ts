@@ -16,7 +16,6 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'a-static.mlcdn.com.br', // Um dos domínios da Magalu
       },
-      // --- ADICIONE ESTE NOVO AQUI ---
       {
         protocol: 'https',
         hostname: 'm.magazineluiza.com.br', // O domínio que deu erro agora
@@ -31,7 +30,8 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname: 'images-americanas.b2w.io',
-      }
+      },
+      { protocol: 'https', hostname: 'www.magazineluiza.com.br' },
     ],
   },
 };

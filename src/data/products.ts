@@ -78,7 +78,7 @@ export const mockProducts: Product[] = [
     id: '4', 
     name: 'apple watch Se 3', 
     price: 3200.50, 
-    image: 'https://www.magazineluiza.com.br/apple-watch-se-3-gps-caixa-estelar-de-aluminio-40mm-pulseira-esportiva-estelar-p-m/p/240598400/te/wats/?seller_id=magazineluiza',
+    image: 'https://m.media-amazon.com/images/I/41H4AoY5xbL._AC_SX342_.jpg',
     images: [
         'https://m.media-amazon.com/images/I/41H4AoY5xbL._AC_SX342_.jpg',
         'https://m.media-amazon.com/images/I/41-c3pK4VvL._AC_SX342_.jpg',
