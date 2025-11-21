@@ -1,6 +1,7 @@
 import '../styles/globals.css'; // <<<--- CORREÇÃO AQUI
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+<link rel="png"  />
 
 // --- CAMINHOS CORRIGIDOS (de '@/' para '../') ---
 import { CartProvider } from '../components/CartContext'; // O "Cérebro"
