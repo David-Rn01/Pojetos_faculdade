@@ -116,13 +116,13 @@ export const mockProducts: Product[] = [
   },
   { 
     id: '6', 
-    name: 'Mouse Gamer Pro', 
-    price: 499.00, 
+    name: 'Mouse Gamer Sem Fio Logitech G Pro X Superlight 2 DEX, Lightspeed, 44.000 DPI, Design Assimétrico para Destros', 
+    price: 750.00, 
     image: 'https://www.magazineluiza.com.br/mouse-gamer-sem-fio-logitech-g-pro-x-superlight-2-dex-lightspeed-44-000-dpi-design-assimetrico-para-destros-branco-910-007364/p/dd55f17b6e/in/rato/?seller_id=kabum',
     images: [
-        'https://m.media-amazon.com/images/I/61mpMH5TzkL._AC_SL1500_.jpg',
-        'https://m.media-amazon.com/images/I/71b3O-XaD+L._AC_SL1500_.jpg',
-        'https://m.media-amazon.com/images/I/61+3+8-1-5L._AC_SL1500_.jpg'
+        'https://m.magazineluiza.com.br/a-static/420x420/mouse-gamer-sem-fio-logitech-g-pro-x-superlight-2-dex-lightspeed-44-000-dpi-design-assimetrico-para-destros-branco-910-007364/kabum/677447/7cec25fda2017d278f2e40c0696cd7b0.jpeg',
+        'https://m.media-amazon.com/images/I/61r-cOXR-eL._AC_SY450_.jpg',
+        'https://m.media-amazon.com/images/I/81IF75prsAL._AC_SY450_.jpg'
     ],
     colors: ['Preto RGB', 'Branco RGB'],
     category: 'Periféricos',
@@ -156,14 +156,14 @@ export const mockProducts: Product[] = [
   },
   { 
     id: '8', 
-    name: 'Teclado Mecânico RGB', 
-    price: 699.00, 
+    name: 'Teclado Mecânico para Games Hykekit x FGG MADLIONS MAD 60 HE RGB 60%',
+    price: 533.00, 
     image: 'https://m.media-amazon.com/images/I/716+3-1-5L._AC_SL1500_.jpg',
     images: [
-        'https://m.media-amazon.com/images/I/716+3-1-5L._AC_SL1500_.jpg',
-        'https://m.media-amazon.com/images/I/71b3O-XaD+L._AC_SL1500_.jpg'
+        'https://m.media-amazon.com/images/I/61ZPIlnLfBL._AC_SY450_.jpg',
+        'https://m.media-amazon.com/images/I/61hYZOix4lL._AC_SX300_SY300_QL70_ML2_.jpg'
     ],
-    colors: ['Switch Blue', 'Switch Red', 'Switch Brown'],
+    colors: ['teclado preto', 'teclado branco'],
     category: 'Periféricos',
     description: 'Digite com estilo e precisão. Teclado mecânico com switches trocáveis, estrutura em alumínio e iluminação RGB por tecla.',
     details: [
@@ -174,20 +174,20 @@ export const mockProducts: Product[] = [
   },
    { 
     id: '9', 
-    name: 'Teclado Mecânico RGB', 
-    price: 699.00, 
+    name: 'Cadeira Gamer XT Racer Reclinável Giratória Preta Platinum W Series', 
+    price: 1044.00, 
     image: 'https://m.media-amazon.com/images/I/716+3-1-5L._AC_SL1500_.jpg',
     images: [
-        'https://m.media-amazon.com/images/I/716+3-1-5L._AC_SL1500_.jpg',
-        'https://m.media-amazon.com/images/I/71b3O-XaD+L._AC_SL1500_.jpg'
+        'http://localhost:3000/_next/image?url=https%3A%2F%2Fm.magazineluiza.com.br%2Fa-static%2F420x420%2Fcadeira-gamer-xt-racer-reclinavel-giratoria-preta-platinum-w-series%2Fmagazineluiza%2F225508500%2F7e722a70bce5446135ccc95881e8e5a1.jpg&w=1080&q=75',
+        'https://media.pichau.com.br/media/catalog/product/cache/ef72d3c27864510e5d4c0ce69bade259/p/g/pg-mry-blks01312679.jpg'
     ],
-    colors: ['Switch Blue', 'Switch Red', 'Switch Brown'],
+    colors: ['Preto'],
     category: 'Periféricos',
-    description: 'Digite com estilo e precisão. Teclado mecânico com switches trocáveis, estrutura em alumínio e iluminação RGB por tecla.',
+    description: 'cadeira gamer reclinável com suporte lombar e almofada para cabeça, design ergonômico para conforto prolongado durante jogos.',
     details: [
-        'Formato: TKL (Tenkeyless)',
-        'Conexão: USB-C removível',
-        'Keycaps: PBT Double-shot'
+        'Estrutura: Aço reforçado',
+        'Revestimento: Couro PU premium',
+        'Ajustes: Altura, inclinação e apoio de braço 4D'
     ]
   },
    { 
@@ -213,38 +213,35 @@ export const mockProducts: Product[] = [
   },
    { 
     id: '11', 
-    name: 'Teclado Mecânico RGB', 
-    price: 699.00, 
+    name: 'Mouse Dazz', 
+    price: 74.00, 
     image: 'https://m.media-amazon.com/images/I/716+3-1-5L._AC_SL1500_.jpg',
     images: [
-        'https://m.media-amazon.com/images/I/716+3-1-5L._AC_SL1500_.jpg',
-        'https://m.media-amazon.com/images/I/71b3O-XaD+L._AC_SL1500_.jpg'
+        'http://localhost:3000/_next/image?url=https%3A%2F%2Fm.magazineluiza.com.br%2Fa-static%2F420x420%2Fmousepad-dazz-hybrid-daskmat-octopus-extra-grande-900x400mm-borda-costurada-preto-estampado-62000141%2Fkabum%2F363053%2Fc0cbfad01e3a670aeccec1f2a66607a8.jpeg&w=1080&q=75',
+        'https://th.bing.com/th/id/OIP.1Zx1WIaXueRD1npyufB-uQHaHa?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3'
     ],
-    colors: ['Switch Blue', 'Switch Red', 'Switch Brown'],
+    colors: ['Ligh','Dark'],
     category: 'Periféricos',
-    description: 'Digite com estilo e precisão. Teclado mecânico com switches trocáveis, estrutura em alumínio e iluminação RGB por tecla.',
-    details: [
-        'Formato: TKL (Tenkeyless)',
-        'Conexão: USB-C removível',
-        'Keycaps: PBT Double-shot'
-    ]
+    description: 'Mouse pad Polvo',
+    details: []
+       
   },
    { 
     id: '12', 
-    name: 'Teclado Mecânico RGB', 
+    name: 'Gabinete Gamer Aquário Em Vidro Com 4 Fans Rgb Gb1797 Cor Branco', 
     price: 699.00, 
     image: 'https://m.media-amazon.com/images/I/716+3-1-5L._AC_SL1500_.jpg',
     images: [
-        'https://m.media-amazon.com/images/I/716+3-1-5L._AC_SL1500_.jpg',
-        'https://m.media-amazon.com/images/I/71b3O-XaD+L._AC_SL1500_.jpg'
+        'http://localhost:3000/_next/image?url=https%3A%2F%2Fm.magazineluiza.com.br%2Fa-static%2F420x420%2Fgabinete-gamer-rise-mode-galaxy-glass-mid-tower-atx-lateral-e-frontal-em-vidro-temperado-sem-fans-branco-rm-ga-gg-fw%2Fkabum%2F320909%2Fa5c9fdb01abf19fe8e1479f87bce1852.jpeg&w=1080&q=75',
+        'https://http2.mlstatic.com/D_Q_NP_949300-MLA91558405584_092025-F.webp'
     ],
-    colors: ['Switch Blue', 'Switch Red', 'Switch Brown'],
+    colors: ['Branco'],
     category: 'Periféricos',
     description: 'Digite com estilo e precisão. Teclado mecânico com switches trocáveis, estrutura em alumínio e iluminação RGB por tecla.',
     details: [
-        'Formato: TKL (Tenkeyless)',
-        'Conexão: USB-C removível',
-        'Keycaps: PBT Double-shot'
+        'Tipo mini tower.',
+        'Compatível con placas mãe Micro-ATX',
+        'Inclui 4 fans rgb.'
     ]
   },
 ];
