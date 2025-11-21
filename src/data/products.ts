@@ -15,7 +15,7 @@ export interface Product {
 export const mockProducts: Product[] = [
   { 
     id: '1', 
-    name: 'Smartphone Pro X (128GB)', 
+    name: 'Sansung s25 Ultra', 
     price: 7649.00, 
     image: 'https://m.media-amazon.com/images/I/61DQDWS45CL._AC_SX425_.jpg',
     images: [
