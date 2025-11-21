@@ -60,7 +60,7 @@ export default function CartPanel() {
                                         </div>
 
                                         {/* Lista de Itens */}
-                                        <div className="flex-grow p-6 overflow-y-auto">
+                                        <div className="grow p-6 overflow-y-auto">
                                             {cartItems.length === 0 ? (
                                                 <div className="text-center text-gray-400 mt-10">
                                                     Seu carrinho está vazio.
