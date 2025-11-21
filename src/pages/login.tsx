@@ -37,6 +37,9 @@ export default function LoginPage() {
         <div className="bg-gray-800 rounded-lg shadow-xl p-8 max-w-md w-full">
           
           <div className="text-center mb-8">
+            <svg className="w-12 h-12 mx-auto text-[#483078] mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
             <h1 className="text-3xl font-bold text-white mt-2">Flashtech</h1>
             <p className="text-gray-300">Entre na sua conta</p>
           </div>

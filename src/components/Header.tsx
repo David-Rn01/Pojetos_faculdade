@@ -17,6 +17,7 @@ export default function Header() {
               <a className="text-3xl font-bold text-[#ffff]">Flashtech</a>
             </Link>
           </div>
+          
 
           {/* --- LINKS DE NAVEGAÇÃO (Centro) --- */}
           <div className="hidden md:flex space-x-8">

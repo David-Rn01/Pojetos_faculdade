@@ -96,7 +96,7 @@ export default function ContactPage() {
                     required
                     placeholder="Seu nome"
                     // AQUI ESTÁ A MUDANÇA: bg-white e text-gray-900 (Preto)
-                    className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
 
@@ -113,7 +113,7 @@ export default function ContactPage() {
                     required
                     placeholder="voce@exemplo.com"
                     // AQUI ESTÁ A MUDANÇA: bg-white e text-gray-900 (Preto)
-                    className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
 
@@ -130,7 +130,7 @@ export default function ContactPage() {
                     placeholder="Como podemos ajudar?"
                     rows={4}
                     // AQUI ESTÁ A MUDANÇA: bg-white e text-gray-900 (Preto)
-                    className="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+                    className="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
                   ></textarea>
                 </div>
 

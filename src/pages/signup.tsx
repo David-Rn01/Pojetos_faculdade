@@ -60,8 +60,8 @@ export default function SignUpPage() {
             <p className="text-sm text-gray-400">
               Já tem uma conta?
               <Link href="/login" legacyBehavior>
-                <a className="font-medium text-[#483078] hover:text-opacity-80 ml-1">
-                  Entrar
+                <a className="font-medium text-blue-400 hover:underline ml-1">
+                   Entrar
                 </a>
               </Link>
             </p>
