@@ -229,7 +229,7 @@ export const mockProducts: Product[] = [
    { 
     id: '12', 
     name: 'Gabinete Gamer Aquário Em Vidro Com 4 Fans Rgb Gb1797 Cor Branco', 
-    price: 699.00, 
+    price: 379.00, 
     image: 'https://m.media-amazon.com/images/I/716+3-1-5L._AC_SL1500_.jpg',
     images: [
         'http://localhost:3000/_next/image?url=https%3A%2F%2Fm.magazineluiza.com.br%2Fa-static%2F420x420%2Fgabinete-gamer-rise-mode-galaxy-glass-mid-tower-atx-lateral-e-frontal-em-vidro-temperado-sem-fans-branco-rm-ga-gg-fw%2Fkabum%2F320909%2Fa5c9fdb01abf19fe8e1479f87bce1852.jpeg&w=1080&q=75',
