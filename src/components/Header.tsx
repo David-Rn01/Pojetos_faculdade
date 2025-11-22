@@ -1,18 +1,17 @@
 import Link from 'next/link';
-import { useRouter } from 'next/router'; // Importamos o useRouter
+import { useRouter } from 'next/router'; 
 import { useCart } from './CartContext';
 import { ShoppingCart, User, Phone } from 'lucide-react';
 
 export default function Header() {
   const { toggleCart, totalItems } = useCart();
   
-  // Pegamos a rota atual para saber em qual página estamos
   const router = useRouter();
   const { pathname } = router;
 
-  // Lista de páginas onde o carrinho NÃO deve aparecer
-  const authPages = ['/','/login', '/signup'];
-  const hideCartButton = authPages.includes(pathname);
+  // Lista de páginas onde os itens da loja (Link "Loja" e Carrinho) NÃO devem aparecer
+  const authPages = ['/', '/login', '/signup'];
+  const isAuthPage = authPages.includes(pathname);
 
   return (
     <header className="bg-gray-900 border-b border-gray-800 sticky top-0 z-40">
@@ -22,15 +21,21 @@ export default function Header() {
           {/* LOGO */}
           <div className="shrink-0">
             <Link href="/" legacyBehavior>
-              <a className="text-3xl font-bold text-[#ffff]">Flashtech</a>
+              <a className="text-3xl font-bold text-[#483078]">Flashtech</a>
             </Link>
           </div>
 
           {/* LINKS DE NAVEGAÇÃO */}
           <div className="hidden md:flex space-x-8">
-            <Link href="/store" legacyBehavior>
-              <a className="text-gray-300 hover:text-white transition-colors font-medium">Loja</a>
-            </Link>
+            
+            {/* --- MUDANÇA AQUI: O Link "Loja" agora é condicional --- */}
+            {!isAuthPage && (
+              <Link href="/store" legacyBehavior>
+                <a className="text-gray-300 hover:text-white transition-colors font-medium">Loja</a>
+              </Link>
+            )}
+            {/* ------------------------------------------------------- */}
+
             <Link href="/about" legacyBehavior>
               <a className="text-gray-300 hover:text-white transition-colors font-medium">Sobre Nós</a>
             </Link>
@@ -46,7 +51,7 @@ export default function Header() {
           <div className="flex items-center space-x-6">
             
             {/* Só mostramos o carrinho se NÃO estivermos nas páginas de auth */}
-            {!hideCartButton && (
+            {!isAuthPage && (
               <button 
                 onClick={toggleCart} 
                 className="relative p-2 text-gray-300 hover:text-white transition-colors focus:outline-none"
