@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+import { MockUsers as mok, VerifyUsers} from '@/data/users';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -17,17 +18,15 @@ export default function LoginPage() {
     console.log("Tentando logar com:", email, password); // Para você ver no Console (F12)
 
     // --- LÓGICA DE TESTE ---
-    // Se quiser aceitar QUALQUER login para testar, apague o IF e deixe só o router.push
-    if (email === 'admin.com' && password === '123456') {
-      console.log('Login aprovado! Redirecionando...');
-      router.push('/store'); 
-    } else {
-      console.log('Login negado.');
-      setError('E-mail ou senha incorretos. (Tente: admin.com / 123456)');
-    }
-  };
 
-  return (
+  if(VerifyUsers(email, password)){
+    router.push('/store');
+  } else{
+    setError('E-mail ou senha incorretos.')
+  }
+};
+
+return (
     <>
       <Head>
         <title>Login - Flashtech</title>

@@ -10,16 +10,19 @@ export default function HomePage() {
       {/* 1. ADICIONE ESTA LINHA PARA CENTRALIZAR */}
       <div className="h-full flex items-center justify-center content-center justify-items-center mt-30 mb-30">
 
-        {/* Card Principal */}
+        {/* Card Principal / box dos elementos */}
         <div className="bg-gray-800 backdrop-blur-sm p-20 rounded-2xl shadow-lg w-150 text-center pt-10">
+          {/*<sgv> adiciona o logo do raio acima da box */}
           <svg className="w-12 h-12 mx-auto text-[#483078] mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
           
+          {/*Titulo flashtech*/}
           <h1 className="text-4xl md:text-5xl font-bold text-amber-50">
             Flashtech
           </h1>
           
+          {/*texto descritivo */}
           <p className="text-lg text-amber-50 mt-3">
             Sua loja de eletrônicos.
           </p>
