@@ -38,7 +38,7 @@ export const VerifyUsers = (email: string, password: string): boolean => {
     let acceptAcess = false;
 
     for (let i = 0; i < userCount; i++){
-        if (MockUsers[i].email === email && MockUsers[i].password === password){
+        if (MockUsers[i].email === email && MockUsers[i].password === password || MockUsers[i].name === email && MockUsers[i].password === password){
             acceptAcess = true;
         }
     }
