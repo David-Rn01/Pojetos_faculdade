@@ -1,15 +1,13 @@
 import Link from 'next/link';
 import { Mail, Phone } from 'lucide-react';
-import { useRouter } from 'next/router'; // 1. Importe o useRouter
+import { useRouter } from 'next/router';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
-  // 2. Pegue a rota atual
   const router = useRouter();
   const { pathname } = router;
 
-  // 3. Crie uma lista das páginas onde o link deve ser escondido
   const authPages = ['/', '/login', '/signup'];
   const hideStoreLink = authPages.includes(pathname);
 
@@ -42,8 +40,6 @@ export default function Footer() {
                 </Link>
               </li>
               
-              {/* --- AQUI ESTÁ A MÁGICA --- */}
-              {/* 4. O link "Loja" só aparece se 'hideStoreLink' for falso */}
               {!hideStoreLink && (
                 <li>
                   <Link href="/store" className="hover:text-flashtech-purple hover:underline transition-colors">
@@ -51,7 +47,6 @@ export default function Footer() {
                   </Link>
                 </li>
               )}
-              {/* --- FIM DA MÁGICA --- */}
 
               <li>
                 <Link href="/about" className="hover:text-flashtech-purple hover:underline transition-colors">

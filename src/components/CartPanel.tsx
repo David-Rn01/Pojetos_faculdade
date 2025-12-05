@@ -1,14 +1,13 @@
 import Link from 'next/link';
-import { useCart } from './CartContext'; // Importa nosso hook
+import { useCart } from './CartContext';
 import { Fragment } from 'react';
-import { Dialog, Transition } from '@headlessui/react'; // Para a animação de slide
+import { Dialog, Transition } from '@headlessui/react';
 
-// Função para formatar o preço
-const formatCurrency = (value: number) => {
+const formatCurrency = (value: string | number | bigint) => {
     return new Intl.NumberFormat('pt-BR', {
         style: 'currency',
         currency: 'BRL'
-    }).format(value);
+    }).format(Number(value));
 };
 
 export default function CartPanel() {
@@ -17,7 +16,6 @@ export default function CartPanel() {
     return (
         <Transition.Root show={isCartOpen} as={Fragment}>
             <Dialog as="div" className="relative z-50" onClose={toggleCart}>
-                {/* Overlay (fundo escuro) */}
                 <Transition.Child
                     as={Fragment}
                     enter="ease-in-out duration-300"
@@ -43,9 +41,7 @@ export default function CartPanel() {
                                 leaveTo="translate-x-full"
                             >
                                 <Dialog.Panel className="pointer-events-auto w-screen max-w-md">
-                                    {/* Este é o conteúdo do `detalhe_produto.html`, mas em React */}
                                     <div className="flex h-full flex-col overflow-y-scroll bg-gray-800 shadow-xl">
-                                        {/* Cabeçalho */}
                                         <div className="flex justify-between items-center p-6 border-b border-gray-700">
                                             <Dialog.Title className="text-2xl font-bold text-white">Meu Carrinho</Dialog.Title>
                                             <button
@@ -59,7 +55,6 @@ export default function CartPanel() {
                                             </button>
                                         </div>
 
-                                        {/* Lista de Itens */}
                                         <div className="grow p-6 overflow-y-auto">
                                             {cartItems.length === 0 ? (
                                                 <div className="text-center text-gray-400 mt-10">
@@ -69,7 +64,7 @@ export default function CartPanel() {
                                                 <ul role="list" className="-my-6 divide-y divide-gray-700">
                                                     {cartItems.map((item) => (
                                                         <li key={item.id} className="flex py-6">
-                                                            <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-700">
+                                                            <div className="h-24 w-24 shrink-0 overflow-hidden rounded-md border border-gray-700">
                                                                 <img src={item.image} alt={item.name} className="h-full w-full object-cover object-center" />
                                                             </div>
                                                             <div className="ml-4 flex flex-1 flex-col">
@@ -107,7 +102,6 @@ export default function CartPanel() {
                                             )}
                                         </div>
 
-                                        {/* Rodapé do Carrinho */}
                                         {cartItems.length > 0 && (
                                             <div className="border-t border-gray-700 p-6 bg-gray-900">
                                                 <div className="flex justify-between text-lg font-semibold text-gray-300">
@@ -121,7 +115,7 @@ export default function CartPanel() {
                                                 <div className="mt-6">
                                                     <Link href="/checkout" legacyBehavior>
                                                         <a
-                                                            onClick={toggleCart} // Fecha o painel ao navegar
+                                                            onClick={toggleCart}
                                                             className="w-full flex items-center justify-center rounded-lg border border-transparent bg-green-600 px-6 py-3 text-lg font-semibold text-white shadow-md hover:bg-green-700 transition duration-300"
                                                         >
                                                             Ir para o Pagamento

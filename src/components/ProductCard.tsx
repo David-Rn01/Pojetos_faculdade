@@ -30,10 +30,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   };
 
   const handleQuickAdd = (e: React.MouseEvent) => {
-    e.preventDefault(); // Evita abrir a página do produto ao clicar no botão
-    e.stopPropagation();
-
-    // Usa a primeira cor como padrão para a adição rápida
+    e.preventDefault();
     const defaultColor = product.colors && product.colors.length > 0 ? product.colors[0] : 'Padrão';
 
     const itemToAdd = {
@@ -51,9 +48,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   };
 
   return (
-    // CONTAINER DO CARD
-    // group: permite controlar estilos dos filhos ao passar o mouse no pai
-    // hover:shadow-blue-500/20: cria o efeito de "glow" azul
+  
     <div className="group relative bg-gray-800 rounded-2xl overflow-hidden border border-gray-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/20 hover:border-blue-500/50 flex flex-col h-full">
       
       {/* Link para a página de detalhes */}

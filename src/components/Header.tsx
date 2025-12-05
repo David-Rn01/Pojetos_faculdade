@@ -9,7 +9,6 @@ export default function Header() {
   const router = useRouter();
   const { pathname } = router;
 
-  // Lista de páginas onde os itens da loja (Link "Loja" e Carrinho) NÃO devem aparecer
   const authPages = ['/', '/login', '/signup'];
   const isAuthPage = authPages.includes(pathname);
 
@@ -28,13 +27,11 @@ export default function Header() {
           {/* LINKS DE NAVEGAÇÃO */}
           <div className="hidden md:flex space-x-8">
             
-            {/* --- MUDANÇA AQUI: O Link "Loja" agora é condicional --- */}
             {!isAuthPage && (
               <Link href="/store" legacyBehavior>
                 <a className="text-gray-300 hover:text-white transition-colors font-medium">Loja</a>
               </Link>
             )}
-            {/* ------------------------------------------------------- */}
 
             <Link href="/about" legacyBehavior>
               <a className="text-gray-300 hover:text-white transition-colors font-medium">Sobre Nós</a>
@@ -50,7 +47,6 @@ export default function Header() {
           {/* ÁREA DIREITA */}
           <div className="flex items-center space-x-6">
             
-            {/* Só mostramos o carrinho se NÃO estivermos nas páginas de auth */}
             {!isAuthPage && (
               <button 
                 onClick={toggleCart} 
