@@ -15,10 +15,9 @@ export default function LoginPage() {
     e.preventDefault(); // Impede a página de recarregar
     setError('');
     
-    console.log("Tentando logar com:", email, password); // Para você ver no Console (F12)
+    console.log("Tentando logar com:", email, password); // Para ver no Console (F12)
 
-    // --- LÓGICA DE TESTE ---
-
+    //verifica na lista de usuários pelo email e a senha digitados
   if(VerifyUsers(email, password)){
     router.push('/store');
   } else{
@@ -43,8 +42,8 @@ return (
             <p className="text-gray-300">Entre na sua conta</p>
           </div>
 
-          {/* O onSubmit DEVE estar aqui na tag form */}
           <form className="space-y-6" onSubmit={handleSubmit}>
+            {/* cria o campo email e senha, a cada alteração é setado na variável email ou senha*/}
             <div>
               <label className="block text-sm font-medium text-gray-300 mb-1" htmlFor="email">
                 E-mail ou Usuário
@@ -75,6 +74,7 @@ return (
               />
             </div>
             
+            {/*em caso de erro dispara a mensagem do método acima */}
             {error && (
               <p className="text-center text-red-400 text-sm bg-red-900/20 p-2 rounded">
                 {error}
@@ -91,6 +91,7 @@ return (
             </button>
           </form>
 
+            {/*link para criar conta ou entrar como visitante sem uma conta */}
           <p className="text-center text-sm text-gray-400 mt-8">
             Não tem uma conta?{' '}
             <Link href="/signup" legacyBehavior>

@@ -1,5 +1,6 @@
 // Este é o nosso "banco de dados" de produtos.
 
+//define o modelo de dados padão para os produtos
 export interface Product {
   id: string;
   name: string;
@@ -12,6 +13,7 @@ export interface Product {
   details: string[];
 }
 
+//lista de todos os produtos
 export const mockProducts: Product[] = [
   { 
     id: '1', 

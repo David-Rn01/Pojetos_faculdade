@@ -12,6 +12,7 @@ export default function SignUpPage() {
   const [password1, setPassword] = useState('');
   const [password2, setPassword2] = useState('');
 
+  //uma variável para armazenar os dados do novo usuário
   let novoUsuario: Users = {
     name: name,
     born: "",
@@ -28,6 +29,7 @@ export default function SignUpPage() {
     console.log('Sign up attempt...');
     // Lógica de criação de conta...
     if (password2 === password1){
+      //se as senhas coincidirem chama o método para cadastrar usuário
       AddUser(novoUsuario);
       router.push('/login'); // Redireciona para login após criar conta
     } 
@@ -39,10 +41,9 @@ export default function SignUpPage() {
         <title>Criar Conta - Flashtech</title>
       </Head>
 
-      {/* 1. ADICIONE ESTE DIV "wrapper" PARA CENTRALIZAR */}
+      {/* 1. centraliza todo o conteudo*/}
       <div className="h-full flex items-center justify-center mt-20 mb-30">
 
-        {/* 2. ESTA É A SUA CAIXA ROXA (com classes corrigidas) */}
         <div className="bg-gray-800 p-8 rounded-lg shadow-xl max-w-md w-full">
           
           <div className="text-center mb-8">
@@ -53,6 +54,7 @@ export default function SignUpPage() {
             <p className="text-gray-300 text-lg mt-1">Crie sua conta</p>
           </div>
 
+          {/* cria o campo nome, email e senha e confirm senha, a cada alteração é setado em sua devida variável*/}
           <form onSubmit={handleSubmit}>
             <div className="space-y-5">
               <div>
@@ -98,12 +100,14 @@ export default function SignUpPage() {
                 onChange={(e) => setPassword2(e.target.value)}
                 required />
               </div>
+              {/*ao clicar no botão dispara o método inicial para criar o usuário */}
               <button type="submit" className="w-full p-3 rounded-lg text-white font-bold text-lg bg-linear-to-r from-[#301860] to-[#483078] hover:opacity-90 transition-opacity duration-200">
                 Criar Conta
               </button>
             </div>
           </form>
 
+            {/*link para logar com uma contra ja existente  */}
           <div className="text-center mt-6">
             <p className="text-sm text-gray-400">
               Já tem uma conta?
@@ -115,9 +119,8 @@ export default function SignUpPage() {
             </p>
           </div>
         </div>
-        {/* FIM DA CAIXA ROXA */}
 
-      </div> {/* 3. FECHE O DIV "wrapper" */}
+      </div>
     </>
   );
 }
